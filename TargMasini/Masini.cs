@@ -7,14 +7,22 @@ namespace targ_masini
     class masina
     {
         string marca;
-        int an;
         int numar_pistoane;
         int capacitate_cilindrica;
         int nr_locuri;
         string nume_vanzator;
         string nume_cumparator;
-        string firma;
-        string model;
+        //int pret;
+        //int an;
+
+        public const int Mai_Mare= 1;
+        public const int Mai_Mic= 1;
+        public const int Egal = 0;
+
+        public int pret { get; set; }
+        public int an { get; set; }
+        public string firma { get; set; }
+        public string model { get; set; }
 
         public masina()
         {
@@ -46,5 +54,31 @@ namespace targ_masini
             Console.WriteLine("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
         }
 
+        public int Comparean(masina s)
+        {
+            if (this.an > s.an)
+                return Mai_Mare;
+            else if (this.an == s.an)
+                return Egal;
+            return Mai_Mic;
+
+        }
+
+        public void SetAnPret(int ann,int prett)
+        {
+            an = ann;
+            pret = prett;
+        }
+        public string ConversieLaSir()
+        {
+            string sAnPret = "Nu exista(Nu ati apelat metoda SetAnPret";
+            if(an!=null&&pret!=null)
+            {
+                sAnPret = string.Format("nul {0} si are pretul de {1} Euro", an, pret);
+            }
+            string s = string.Format("masina {0}, modelul{1} este din {2}  ", marca, firma, sAnPret);
+
+            return s;
+        }
     }
 }
