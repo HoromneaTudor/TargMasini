@@ -49,9 +49,11 @@ namespace targ_masini
             model = buff[3];
 
         }
-        public void afisare()
+        public string afisare()
         {
-            Console.WriteLine("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
+            //Console.WriteLine("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
+            string s = string.Format("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
+            return s;
         }
 
         public int Comparean(masina s)

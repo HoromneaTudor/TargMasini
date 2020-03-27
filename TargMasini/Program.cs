@@ -9,10 +9,10 @@ namespace targ_masini
             var f = new masina("alin", "petru", "opel", "astra");
             f.afisare();
             var f1 = new masina();
-            f1.afisare();
+            Console.WriteLine( f1.afisare());
             Console.ReadKey();
             var f2 = new masina("tudor,narcis,citroen,c5");
-            f2.afisare();
+            Console.WriteLine(f2.afisare());
             Console.ReadKey();
             f2.SetAnPret(2000, 5000);
             f.SetAnPret(1999, 4500);
