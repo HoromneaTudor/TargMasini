@@ -2,23 +2,46 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace targ_masini
+namespace NivelAccesDate
 {
-    class masina
+    public class masina
     {
-        string marca;
-        int numar_pistoane;
-        int capacitate_cilindrica;
-        int nr_locuri;
+        //string marca;
+        //int numar_pistoane;
+        //int capacitate_cilindrica;
+        //int nr_locuri;
         string nume_vanzator;
         string nume_cumparator;
         //int pret;
         //int an;
 
-        public const int Mai_Mare= 1;
-        public const int Mai_Mic= 1;
+        private int n;
+
+        public const int Mai_Mare = 1;
+        public const int Mai_Mic = 1;
         public const int Egal = 0;
 
+        public enum CuloareMasina
+        {
+            Rosu = 1,
+            Albastru = 2,
+            Gri = 3,
+            Alb = 4,
+            Portocaliu = 5,
+        };
+
+        [Flags]
+        public enum Optiuni : short
+        {
+            None = 0,
+            AerConditionat = 1,
+            ScauneDePiele = 2,
+            ABS = 4,
+            LuminiDeCeata = 8,
+        };
+
+        public Optiuni OptiuniMasina { get; set; }
+        public CuloareMasina Culoare { get; set; }
         public int pret { get; set; }
         public int an { get; set; }
         public string firma { get; set; }
@@ -42,7 +65,7 @@ namespace targ_masini
 
         public masina(string nume1)
         {
-            string[] buff = nume1.Split(",");
+            string[] buff = nume1.Split(',');
             nume_cumparator = buff[0];
             nume_vanzator = buff[1];
             firma = buff[2];
@@ -76,9 +99,9 @@ namespace targ_masini
             string sAnPret = "Nu exista(Nu ati apelat metoda SetAnPret";
             if(an!=null&&pret!=null)
             {
-                sAnPret = string.Format("nul {0} si are pretul de {1} Euro", an, pret);
+                sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret,Culoare.ToString(),OptiuniMasina);
             }
-            string s = string.Format("masina {0}, modelul{1} este din {2}  ", marca, firma, sAnPret);
+            string s = string.Format("masina {0}, modelul {1} este din {2}  ", firma, model, sAnPret);
 
             return s;
         }
