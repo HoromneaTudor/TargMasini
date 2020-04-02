@@ -1,6 +1,6 @@
 ﻿using System;
 using NivelAccesDate;
-using NivelAccesDate;
+using Masina;
 
 namespace targ_masini
 {

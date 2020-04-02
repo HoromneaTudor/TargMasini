@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NivelAccesDate
+namespace Masina
 {
     public class masina
     {
