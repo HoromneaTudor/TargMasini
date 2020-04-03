@@ -22,7 +22,7 @@ namespace TargMasini
             string optiune;
             do
             {
-                Console.WriteLine("1.Creare masina predefinita");
+                Console.WriteLine("1.Creare masina predefinita ");
                 Console.WriteLine("2.Creare masina (constructor null)");
                 Console.WriteLine("3.Creare masina (constructor predefinit cu delimitator)");
                 Console.WriteLine("4.adaugare 2 masini de la tastatura ,afisarea primei masini introduse si compararea anilor lor ");
