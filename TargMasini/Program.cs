@@ -1,14 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using NivelAccesDate;
 using Masina;
 
-namespace targ_masini
+namespace TargMasini
 {
     class Program
     {
         static void Main(string[] args)
         {
             masina[] masini;
+            IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
+            int nrvehicule;
+            masini = adminMasini.GetStudenti(out nrvehicule);
+            masina.IdUltimaMasina = nrvehicule;
 
 
             string optiune;
@@ -19,11 +27,12 @@ namespace targ_masini
                 Console.WriteLine("3.Creare masina (constructor predefinit cu delimitator)");
                 Console.WriteLine("4.adaugare 2 masini de la tastatura ,afisarea primei masini introduse si compararea anilor lor ");
                 Console.WriteLine("5.Afisare masini existente");
-                Console.WriteLine("6.Modificare masina existenta");
+                Console.WriteLine("6.Adauga masina tastatura");
+                Console.WriteLine("7.Modificare masina existenta");
                 Console.WriteLine("Alegeti o optiune");
                 optiune = Console.ReadLine();
                 Console.Clear();
-                switch(optiune)
+                switch (optiune)
                 {
                     case "1":
                         var f = new masina("alin", "petru", "opel", "astra");
@@ -52,6 +61,35 @@ namespace targ_masini
                         }
                         else Console.WriteLine("masina {0}, modelul {1} este mai veche decat masina {2} modelul {3}", f3.firma, f3.model, f4.firma, f4.model);
                         break;
+                    case "5":
+                        AfisareMasini(masini, nrvehicule);
+                        break;
+                    case "6":
+                        masina m = CitireMasinaTastatura();
+                        masini[nrvehicule] = m;
+                        nrvehicule++;
+                        adminMasini.AddMasina(m);
+                        break;
+                    case "7":
+                        Console.WriteLine("Dati Numele vanzatorului:");
+                        string nume_Temporar = Console.ReadLine();
+                        Console.WriteLine("Dati modelul masinii:");
+                        string model_temporar = Console.ReadLine();
+                        Console.WriteLine("Dati anul:");
+                        string ant = Console.ReadLine();
+                        int an_temporar = Int32.Parse(ant);
+                        m = cautaMasina(nume_Temporar, model_temporar, an_temporar, nrvehicule, masini);
+                        if(m!=null)
+                        {
+
+                            Console.WriteLine("introduceti noul pret:");
+                            string sir = Console.ReadLine();
+                            int pretnou = Int32.Parse(sir);
+                            m.SetAnPret(m.an, pretnou);
+                        }
+                        break;
+
+
                     default:
                         Console.WriteLine("Optiune inexistenta");
                         break;
@@ -64,12 +102,12 @@ namespace targ_masini
             } while (optiune.ToUpper() != "X");
 
             Console.ReadKey();
-            
-            
-            //string p = Console.ReadLine();
-            
 
-           
+
+            //string p = Console.ReadLine();
+
+
+
         }
         public static masina CitireMasinaTastatura()
         {
@@ -96,7 +134,7 @@ namespace targ_masini
 
             Console.WriteLine("Dati culoarea vehicului:\n1- Rosu\n2- Albastru\n3- Gri\n4- Alb\n5- Portocaliu/n");
             m.Culoare = (masina.CuloareMasina)Int32.Parse(Console.ReadLine());
-          
+
 
             Console.WriteLine(
            "\nAll possible combinations of values with FlagsAttribute:");
@@ -108,14 +146,26 @@ namespace targ_masini
             return m;
         }
 
-        public static void AfisareMasini(masina[] masini,int nrmasini)
+        public static void AfisareMasini(masina[] masini, int nrmasini)
         {
             Console.WriteLine("Masinile sunt:");
-            for(int i=0;i<nrmasini;++i)
-                { 
+            for (int i = 0; i < nrmasini; ++i)
+            {
                 Console.WriteLine(masini[i].ConversieLaSir());
-                }
+            }
+
+        }
+
+        public static masina cautaMasina(string nume,string model,int anul,int nrvehicule,masina[] sir_masini)
+        {
+            for(int i=0;i<nrvehicule;++i)
+            {
+                if ((string.Equals(nume, sir_masini[i].nume_vanzator)) && (string.Equals(model, sir_masini[i].model)) && (int.Equals(anul, sir_masini[i].an)))
+                    return sir_masini[i];
+                    }
+            return null;
 
         }
     }
 }
+

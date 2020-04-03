@@ -6,7 +6,7 @@ namespace NivelAccesDate
     //definitia interfetei
     public interface IStocareData
     {
-        void AddStudent(masina s);
-        masina[] GetStudenti(out int nrStudenti);
+        void AddMasina(masina s);
+        masina[] GetStudenti(out int nrMasini);
     }
 }

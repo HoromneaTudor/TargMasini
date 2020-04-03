@@ -13,7 +13,7 @@ namespace NivelAccesDate
             this.NumeFisier = NumeFisier;
         }
 
-        public void AddStudent(masina s)
+        public void AddMasina(masina s)
         {
             throw new Exception("Optiunea AddStudent nu este implementata");
         }

@@ -20,7 +20,7 @@ namespace NivelAccesDate
             //instructiunea 'using' va apela sFisierText.Close();
             //using (Stream sFisierText = File.Open(numeFisier, FileMode.OpenOrCreate)) { }
         }
-        public void AddStudent(masina s)
+        public void AddMasina(masina s)
         {
             try
             {
@@ -29,7 +29,7 @@ namespace NivelAccesDate
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, true))
                 {
                     //swFisierText.WriteLine(s.ConversieLaSir_PentruFisier());
-                    swFisierText.WriteLine(s.ConversieLaSir());
+                    swFisierText.WriteLine(s.ConversieLaSir_PentruFisier());
                 }
             }
             catch (IOException eIO)
