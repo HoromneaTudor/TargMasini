@@ -96,7 +96,10 @@ namespace TargMasini
                             string sir = Console.ReadLine();
                             int pretnou = Int32.Parse(sir);
                             m.SetAnPret(m.an, pretnou);
+
+
                         }
+
                         break;
 
 
@@ -112,6 +115,7 @@ namespace TargMasini
             } while (optiune.ToUpper() != "X");
 
             Console.ReadKey();
+            adminMasini.edititare(masini);
 
 
             //string p = Console.ReadLine();

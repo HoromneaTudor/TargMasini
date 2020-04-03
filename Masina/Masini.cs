@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace Masina
 {
@@ -155,6 +158,32 @@ namespace Masina
 
             return s;
         }
+        //public void UpdateMasina(masina[] u, int nr)
+        //{
+        //    var encoding = Encoding.UTF8;
+        //    using (var stream = new FileStream("Masini.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None))
+        //    {
+
+        //        stream.Position = 0;
+        //        using (var writer = new StreamWriter(stream, encoding))
+        //        {
+        //            for (int z = 0; z <= nr; z++)
+        //                writer.Write(u[z].ConversieLaSir_PentruFisier());
+        //        }
+
+        //    }
+        //}
+        //~masina()
+        //{
+        //    using (StreamWriter streamWriter = new StreamWriter("Masini.txt"))
+        //    {
+        //        foreach (var entry in masina)
+        //        {
+        //            streamWriter.WriteLine(entry.Value.ToString());
+        //        }
+        //    }
+        //}
+        
 
     }
 }

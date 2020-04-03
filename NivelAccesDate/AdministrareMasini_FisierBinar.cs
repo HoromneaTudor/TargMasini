@@ -22,5 +22,10 @@ namespace NivelAccesDate
         {
             throw new Exception("Optiunea GetStudenti nu este implementata");
         }
+
+        public void edititare(masina[] v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

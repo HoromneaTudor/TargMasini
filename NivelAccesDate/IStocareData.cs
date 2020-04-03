@@ -8,5 +8,6 @@ namespace NivelAccesDate
     {
         void AddMasina(masina s);
         masina[] GetMasina(out int nrMasini);
+        void edititare(masina[] v);
     }
 }
