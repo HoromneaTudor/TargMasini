@@ -42,7 +42,7 @@ namespace NivelAccesDate
             }
         }
 
-        public masina[] GetStudenti(out int nrStudenti)
+        public masina[] GetMasina(out int nrStudenti)
         {
             masina[] studenti = new masina[PAS_ALOCARE];
 

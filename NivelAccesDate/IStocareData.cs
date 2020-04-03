@@ -7,6 +7,6 @@ namespace NivelAccesDate
     public interface IStocareData
     {
         void AddMasina(masina s);
-        masina[] GetStudenti(out int nrMasini);
+        masina[] GetMasina(out int nrMasini);
     }
 }

@@ -18,7 +18,7 @@ namespace NivelAccesDate
             throw new Exception("Optiunea AddStudent nu este implementata");
         }
 
-        public masina[] GetStudenti(out int nrStudenti)
+        public masina[] GetMasina(out int nrStudenti)
         {
             throw new Exception("Optiunea GetStudenti nu este implementata");
         }

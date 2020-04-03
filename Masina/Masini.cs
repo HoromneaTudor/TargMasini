@@ -81,6 +81,8 @@ namespace Masina
             nume_vanzator = numev;
             firma = firmaa;
             model = modell;
+            IdUltimaMasina++;
+            IdMasina = IdUltimaMasina;
 
         }
 
@@ -111,11 +113,12 @@ namespace Masina
             Culoare = (CuloareMasina)Enum.Parse(typeof(CuloareMasina), dateFisier[CULOARE]);
             OptiuniMasina = (Optiuni)Enum.Parse(typeof(Optiuni), dateFisier[OPTIUNI]);
             IdUltimaMasina = IdMasina;
+           
         }
         public string afisare()
         {
             //Console.WriteLine("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
-            string s = string.Format("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
+            string s = string.Format(" Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
             return s;
         }
 
@@ -141,7 +144,7 @@ namespace Masina
             {
                 sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret, Culoare.ToString(), OptiuniMasina);
             }
-            string s = string.Format("masina {0}, modelul {1} este din {2}  ", firma, model, sAnPret);
+            string s = string.Format("Masina cu ID-ul: {3} este masina {0}, modelul {1} este din {2}  si este vanduta de {4}\n", firma, model, sAnPret,IdMasina,nume_vanzator);
 
             return s;
         }

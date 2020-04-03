@@ -15,7 +15,7 @@ namespace TargMasini
             masina[] masini;
             IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
             int nrvehicule;
-            masini = adminMasini.GetStudenti(out nrvehicule);
+            masini = adminMasini.GetMasina(out nrvehicule);
             masina.IdUltimaMasina = nrvehicule;
 
 
@@ -37,14 +37,17 @@ namespace TargMasini
                     case "1":
                         var f = new masina("alin", "petru", "opel", "astra");
                         Console.WriteLine(f.afisare());
+                        Console.ReadKey();
                         break;
                     case "2":
                         var f1 = new masina();
                         Console.WriteLine(f1.afisare());
+                        Console.ReadKey();
                         break;
                     case "3":
                         var f2 = new masina("tudor,narcis,citroen,c5");
                         Console.WriteLine(f2.afisare());
+                        Console.ReadKey();
                         break;
                     case "4":
                         masina f3 = CitireMasinaTastatura();
@@ -60,17 +63,24 @@ namespace TargMasini
                             Console.WriteLine("masina {0}, modelul {1} este din acelasi an cu masina {2} modelul {3}", f3.firma, f3.model, f4.firma, f4.model);
                         }
                         else Console.WriteLine("masina {0}, modelul {1} este mai veche decat masina {2} modelul {3}", f3.firma, f3.model, f4.firma, f4.model);
+                        Console.ReadKey();
                         break;
                     case "5":
+                        Console.Clear();
                         AfisareMasini(masini, nrvehicule);
+                        Console.ReadKey();
                         break;
                     case "6":
                         masina m = CitireMasinaTastatura();
                         masini[nrvehicule] = m;
                         nrvehicule++;
                         adminMasini.AddMasina(m);
+                        
+                        
                         break;
                     case "7":
+                        Console.Clear();
+                        AfisareMasini(masini, nrvehicule);
                         Console.WriteLine("Dati Numele vanzatorului:");
                         string nume_Temporar = Console.ReadLine();
                         Console.WriteLine("Dati modelul masinii:");
