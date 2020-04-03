@@ -78,11 +78,12 @@ namespace NivelAccesDate
         }
         public void edititare(masina[] v)
         {
-            using (StreamWriter streamWriter = new StreamWriter("Masini.txt"))
+            using (StreamWriter streamWriter = new StreamWriter(NumeFisier))
             {
                 for (int i = 0; i < masina.IdUltimaMasina; ++i)
                 {
                     streamWriter.WriteLine(v[i].ConversieLaSir_PentruFisier());
+   
                 }
             }
 
