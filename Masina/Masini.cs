@@ -22,7 +22,7 @@ namespace Masina
         private const string SEPARATOR_AFISARE = " ";
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
 
-        private int n;
+        //private int n;
 
         public const int Mai_Mare = 1;
         public const int Mai_Mic = 1;
@@ -86,6 +86,8 @@ namespace Masina
             model = modell;
             IdUltimaMasina++;
             IdMasina = IdUltimaMasina;
+            Culoare = 0;
+            OptiuniMasina = 0;
 
         }
 
@@ -143,11 +145,11 @@ namespace Masina
         public string ConversieLaSir()
         {
             string sAnPret = "Nu exista(Nu ati apelat metoda SetAnPret";
-            if (an != null && pret != null)
+            if (an != 0 && pret != 0)
             {
                 sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret, Culoare.ToString(), OptiuniMasina);
             }
-            string s = string.Format("Masina cu ID-ul: {3} este masina {0}, modelul {1} este din {2}  si este vanduta de {4}\n", firma, model, sAnPret,IdMasina,nume_vanzator);
+            string s = string.Format("ID-ul Masina: {3}\nMarca: {0} \nmodelul {1} \nEste din {2}  \nNume vanzator: {4}\nNume cumparator(daca exista): {5}\n", firma, model, sAnPret,IdMasina,nume_vanzator,nume_cumparator);
 
             return s;
         }

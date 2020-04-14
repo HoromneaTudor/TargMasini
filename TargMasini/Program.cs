@@ -22,6 +22,7 @@ namespace TargMasini
             string optiune;
             do
             {
+                Console.Clear();
                 Console.WriteLine("1.Creare masina predefinita ");
                 Console.WriteLine("2.Creare masina (constructor null)");
                 Console.WriteLine("3.Creare masina (constructor predefinit cu delimitator)");
@@ -29,6 +30,7 @@ namespace TargMasini
                 Console.WriteLine("5.Afisare masini existente");
                 Console.WriteLine("6.Adauga masina tastatura");
                 Console.WriteLine("7.Modificare masina existenta");
+                Console.WriteLine("x.Iesire program");
                 Console.WriteLine("Alegeti o optiune");
                 optiune = Console.ReadLine();
                 Console.Clear();
