@@ -209,6 +209,9 @@ namespace Aplicatie
         }
         private int Validare()
         {
+            int i,j;
+            bool success1 = int.TryParse(txtAn.Text, out i);
+            bool success2 = int.TryParse(txtPret.Text, out j);
             if (txtNume.Text == string.Empty || txtNume.Text.Length > LUNGIMEMAXIMA)
             {
                 return 1;
@@ -222,9 +225,9 @@ namespace Aplicatie
                 return 3;
             else if (txtModel.Text == string.Empty)
                 return 4;
-            else if (txtAn.Text == string.Empty)
-                return 5;
-            else if (txtPret.Text == string.Empty)
+            else if(!success1)
+            return 5;
+            else if (!success2)
                 return 6;
             return 0;
 
