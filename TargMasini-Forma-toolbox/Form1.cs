@@ -16,6 +16,7 @@ namespace TargMasini_Forma_toolbox
     public partial class Form1 : Form
     {
         IStocareData adminMasini;
+        ArrayList optiuniSelectate = new ArrayList();
         public Form1()
         {
             InitializeComponent();
@@ -63,6 +64,8 @@ namespace TargMasini_Forma_toolbox
                 int pret = Int32.Parse(txtPret.Text);
                 int an = Int32.Parse(txtAn.Text);
                 m.SetAnPret(an,pret);
+                m.Culoare = GetCuloareMasina();
+                m.OptiuniMasina = GetOptiuni();
                 adminMasini.AddMasina(m);
                 lblAdauga.Text = "Masina a fost adaugata cu succes";
             }
@@ -143,7 +146,7 @@ namespace TargMasini_Forma_toolbox
             {
                 rtbAfisare.AppendText(m.IdMasina.ToString());
                 rtbAfisare.AppendText(" ");
-                rtbAfisare.AppendText(m.afisare());
+                rtbAfisare.AppendText(m.ConversieLaSir());
                 rtbAfisare.AppendText(Environment.NewLine);
             }
         }
@@ -154,7 +157,7 @@ namespace TargMasini_Forma_toolbox
             if (m != null)
             {
                 lblCauta.Text = m.ConversieLaSir();
-                lblModifica.Text = "Introduceti noul pret si apasati modifica in cazul in care doriti modificarea acestuia";
+                lblModifica.Text = "Introduceti noul pretsau optiuni si apasati modifica in cazul in care doriti modificarea acestuia";
             }
             else
             {
@@ -176,11 +179,19 @@ namespace TargMasini_Forma_toolbox
 
         private void btnModifica_Click(object sender, EventArgs e)
         {
+            lblModifica.Text = "";
+            lblCauta.Text = "";
             masina m = adminMasini.GetMasina(txtNume.Text, txtPrenume.Text, txtModel.Text);
             if(m!=null)
             {
-                int prett = Int32.Parse(txtPret.Text);
-                m.pret = prett;
+
+                if (txtPret.Text != string.Empty)
+                {
+                    int prett = Int32.Parse(txtPret.Text);
+                    m.pret = prett;
+                }
+                m.Culoare = GetCuloareMasina();
+                m.OptiuniMasina = GetOptiuni();
                 adminMasini.UpdateMasina(m);
 
             }
@@ -188,6 +199,62 @@ namespace TargMasini_Forma_toolbox
             {
                 lblModifica.Text = "Student inexistent";
             }
+        }
+        //private void ckbOptiuni_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    CheckBox checkBoxControl = sender as CheckBox;
+        //    string optiuneSelectata = checkBoxControl.Text;
+        //    if (checkBoxControl.Checked == true)
+        //        optiuniSelectate.Add(optiuneSelectata);
+        //    else
+        //        optiuniSelectate.Remove(optiuneSelectata);
+                
+        //}
+
+        private Optiuni GetOptiuni()
+        {
+            int i = 0;
+            if (ckbAerConditionat.Checked)
+                i++;
+            if (ckbScaunePiele.Checked)
+                i += 2;
+            if (ckbABS.Checked)
+                i += 4;
+            if (ckbLuminiCeata.Checked)
+                i += 8;
+            return (Optiuni)i;
+        }
+
+        private void ResetareControale()
+        {
+            txtNume.Text = txtPrenume.Text = txtAn.Text = txtMarca.Text = txtModel.Text = txtPret.Text = string.Empty;
+            rdbRosu.Checked = false;
+            rdbAlbastru.Checked = false;
+            rdbGri.Checked = false;
+            rdbAlb.Checked = false;
+            rdbPortocaliu.Checked = false;
+            ckbABS.Checked = false;
+            ckbScaunePiele.Checked = false;
+            ckbAerConditionat.Checked = false;
+            ckbLuminiCeata.Checked = false;
+            
+            optiuniSelectate.Clear();
+            lblMesaj.Text = string.Empty;
+        }
+        private CuloareMasina GetCuloareMasina()
+        {
+            if (rdbAlb.Checked)
+                return CuloareMasina.Alb;
+            if (rdbAlbastru.Checked)
+                return CuloareMasina.Albastru;
+            if (rdbGri.Checked)
+                return CuloareMasina.Gri;
+            if (rdbRosu.Checked)
+                return CuloareMasina.Rosu;
+            if (rdbPortocaliu.Checked)
+                return CuloareMasina.Portocaliu;
+            return CuloareMasina.Inexistenta;
+
         }
     }
 }

@@ -17,4 +17,22 @@ namespace Masina
         PRET_INCORECT=6
 
     }
+    public enum CuloareMasina
+    {
+        Rosu = 1,
+        Albastru = 2,
+        Gri = 3,
+        Alb = 4,
+        Portocaliu = 5,
+        Inexistenta = 6,
+    };
+    [Flags]
+    public enum Optiuni : short
+    {
+        None = 0,
+        AerConditionat = 1,
+        ScauneDePiele = 2,
+        ABS = 4,
+        LuminiDeCeata = 8,
+    };
 }

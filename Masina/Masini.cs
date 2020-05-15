@@ -38,25 +38,6 @@ namespace Masina
         private const int CULOARE = 7;
         private const int OPTIUNI = 8;
 
-        public enum CuloareMasina
-        {
-            Rosu = 1,
-            Albastru = 2,
-            Gri = 3,
-            Alb = 4,
-            Portocaliu = 5,
-        };
-
-        [Flags]
-        public enum Optiuni : short
-        {
-            None = 0,
-            AerConditionat = 1,
-            ScauneDePiele = 2,
-            ABS = 4,
-            LuminiDeCeata = 8,
-        };
-
         public Optiuni OptiuniMasina { get; set; }
         public CuloareMasina Culoare { get; set; }
 

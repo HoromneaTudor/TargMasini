@@ -50,19 +50,33 @@
             this.lblAn = new System.Windows.Forms.Label();
             this.lblModel = new System.Windows.Forms.Label();
             this.lblVechime = new System.Windows.Forms.Label();
+            this.gpbCuloar = new System.Windows.Forms.GroupBox();
+            this.ckbLuminiCeata = new System.Windows.Forms.CheckBox();
+            this.ckbABS = new System.Windows.Forms.CheckBox();
+            this.ckbScaunePiele = new System.Windows.Forms.CheckBox();
+            this.ckbAerConditionat = new System.Windows.Forms.CheckBox();
+            this.gpbOptiuni = new System.Windows.Forms.GroupBox();
+            this.rdbAlb = new System.Windows.Forms.RadioButton();
+            this.rdbGri = new System.Windows.Forms.RadioButton();
+            this.rdbAlbastru = new System.Windows.Forms.RadioButton();
+            this.rdbRosu = new System.Windows.Forms.RadioButton();
+            this.rdbPortocaliu = new System.Windows.Forms.RadioButton();
+            this.lblMesaj = new System.Windows.Forms.Label();
+            this.gpbCuloar.SuspendLayout();
+            this.gpbOptiuni.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblModifica
             // 
             this.lblModifica.AutoSize = true;
-            this.lblModifica.Location = new System.Drawing.Point(220, 422);
+            this.lblModifica.Location = new System.Drawing.Point(220, 512);
             this.lblModifica.Name = "lblModifica";
             this.lblModifica.Size = new System.Drawing.Size(0, 13);
             this.lblModifica.TabIndex = 31;
             // 
             // btnModifica
             // 
-            this.btnModifica.Location = new System.Drawing.Point(124, 419);
+            this.btnModifica.Location = new System.Drawing.Point(124, 509);
             this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
             this.btnModifica.Size = new System.Drawing.Size(56, 19);
@@ -74,7 +88,7 @@
             // lblCauta
             // 
             this.lblCauta.AutoSize = true;
-            this.lblCauta.Location = new System.Drawing.Point(423, 314);
+            this.lblCauta.Location = new System.Drawing.Point(518, 36);
             this.lblCauta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCauta.Name = "lblCauta";
             this.lblCauta.Size = new System.Drawing.Size(0, 13);
@@ -82,7 +96,7 @@
             // 
             // btnCauta
             // 
-            this.btnCauta.Location = new System.Drawing.Point(124, 386);
+            this.btnCauta.Location = new System.Drawing.Point(124, 476);
             this.btnCauta.Margin = new System.Windows.Forms.Padding(2);
             this.btnCauta.Name = "btnCauta";
             this.btnCauta.Size = new System.Drawing.Size(56, 19);
@@ -93,10 +107,10 @@
             // 
             // rtbAfisare
             // 
-            this.rtbAfisare.Location = new System.Drawing.Point(413, 145);
+            this.rtbAfisare.Location = new System.Drawing.Point(413, 172);
             this.rtbAfisare.Margin = new System.Windows.Forms.Padding(2);
             this.rtbAfisare.Name = "rtbAfisare";
-            this.rtbAfisare.Size = new System.Drawing.Size(539, 140);
+            this.rtbAfisare.Size = new System.Drawing.Size(539, 322);
             this.rtbAfisare.TabIndex = 27;
             this.rtbAfisare.Text = "";
             // 
@@ -114,7 +128,7 @@
             // lblAdauga
             // 
             this.lblAdauga.AutoSize = true;
-            this.lblAdauga.Location = new System.Drawing.Point(220, 210);
+            this.lblAdauga.Location = new System.Drawing.Point(34, 3);
             this.lblAdauga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdauga.Name = "lblAdauga";
             this.lblAdauga.Size = new System.Drawing.Size(0, 13);
@@ -259,11 +273,145 @@
             this.lblVechime.TabIndex = 38;
             this.lblVechime.Click += new System.EventHandler(this.label1_Click);
             // 
+            // gpbCuloar
+            // 
+            this.gpbCuloar.Controls.Add(this.rdbPortocaliu);
+            this.gpbCuloar.Controls.Add(this.rdbAlb);
+            this.gpbCuloar.Controls.Add(this.rdbGri);
+            this.gpbCuloar.Controls.Add(this.lblAdauga);
+            this.gpbCuloar.Controls.Add(this.rdbRosu);
+            this.gpbCuloar.Controls.Add(this.rdbAlbastru);
+            this.gpbCuloar.Location = new System.Drawing.Point(124, 261);
+            this.gpbCuloar.Name = "gpbCuloar";
+            this.gpbCuloar.Size = new System.Drawing.Size(244, 100);
+            this.gpbCuloar.TabIndex = 39;
+            this.gpbCuloar.TabStop = false;
+            this.gpbCuloar.Text = "Culoare";
+            // 
+            // ckbLuminiCeata
+            // 
+            this.ckbLuminiCeata.AutoSize = true;
+            this.ckbLuminiCeata.Location = new System.Drawing.Point(114, 43);
+            this.ckbLuminiCeata.Name = "ckbLuminiCeata";
+            this.ckbLuminiCeata.Size = new System.Drawing.Size(98, 17);
+            this.ckbLuminiCeata.TabIndex = 3;
+            this.ckbLuminiCeata.Text = "LuminiDeCeata";
+            this.ckbLuminiCeata.UseVisualStyleBackColor = true;
+            // 
+            // ckbABS
+            // 
+            this.ckbABS.AutoSize = true;
+            this.ckbABS.Location = new System.Drawing.Point(13, 43);
+            this.ckbABS.Name = "ckbABS";
+            this.ckbABS.Size = new System.Drawing.Size(47, 17);
+            this.ckbABS.TabIndex = 2;
+            this.ckbABS.Text = "ABS";
+            this.ckbABS.UseVisualStyleBackColor = true;
+            // 
+            // ckbScaunePiele
+            // 
+            this.ckbScaunePiele.AutoSize = true;
+            this.ckbScaunePiele.Location = new System.Drawing.Point(114, 20);
+            this.ckbScaunePiele.Name = "ckbScaunePiele";
+            this.ckbScaunePiele.Size = new System.Drawing.Size(86, 17);
+            this.ckbScaunePiele.TabIndex = 1;
+            this.ckbScaunePiele.Text = "ScaunePiele";
+            this.ckbScaunePiele.UseVisualStyleBackColor = true;
+            // 
+            // ckbAerConditionat
+            // 
+            this.ckbAerConditionat.AutoSize = true;
+            this.ckbAerConditionat.Location = new System.Drawing.Point(13, 19);
+            this.ckbAerConditionat.Name = "ckbAerConditionat";
+            this.ckbAerConditionat.Size = new System.Drawing.Size(95, 17);
+            this.ckbAerConditionat.TabIndex = 0;
+            this.ckbAerConditionat.Text = "AerConditionat";
+            this.ckbAerConditionat.UseVisualStyleBackColor = true;
+            // 
+            // gpbOptiuni
+            // 
+            this.gpbOptiuni.Controls.Add(this.ckbABS);
+            this.gpbOptiuni.Controls.Add(this.ckbAerConditionat);
+            this.gpbOptiuni.Controls.Add(this.ckbScaunePiele);
+            this.gpbOptiuni.Controls.Add(this.ckbLuminiCeata);
+            this.gpbOptiuni.Location = new System.Drawing.Point(124, 367);
+            this.gpbOptiuni.Name = "gpbOptiuni";
+            this.gpbOptiuni.Size = new System.Drawing.Size(244, 100);
+            this.gpbOptiuni.TabIndex = 40;
+            this.gpbOptiuni.TabStop = false;
+            this.gpbOptiuni.Text = "Optiuni";
+            // 
+            // rdbAlb
+            // 
+            this.rdbAlb.AutoSize = true;
+            this.rdbAlb.Location = new System.Drawing.Point(101, 43);
+            this.rdbAlb.Name = "rdbAlb";
+            this.rdbAlb.Size = new System.Drawing.Size(40, 17);
+            this.rdbAlb.TabIndex = 3;
+            this.rdbAlb.TabStop = true;
+            this.rdbAlb.Text = "Alb";
+            this.rdbAlb.UseVisualStyleBackColor = true;
+            // 
+            // rdbGri
+            // 
+            this.rdbGri.AutoSize = true;
+            this.rdbGri.Location = new System.Drawing.Point(9, 43);
+            this.rdbGri.Name = "rdbGri";
+            this.rdbGri.Size = new System.Drawing.Size(38, 17);
+            this.rdbGri.TabIndex = 2;
+            this.rdbGri.TabStop = true;
+            this.rdbGri.Text = "Gri";
+            this.rdbGri.UseVisualStyleBackColor = true;
+            // 
+            // rdbAlbastru
+            // 
+            this.rdbAlbastru.AutoSize = true;
+            this.rdbAlbastru.Location = new System.Drawing.Point(101, 19);
+            this.rdbAlbastru.Name = "rdbAlbastru";
+            this.rdbAlbastru.Size = new System.Drawing.Size(63, 17);
+            this.rdbAlbastru.TabIndex = 1;
+            this.rdbAlbastru.TabStop = true;
+            this.rdbAlbastru.Text = "Albastru";
+            this.rdbAlbastru.UseVisualStyleBackColor = true;
+            // 
+            // rdbRosu
+            // 
+            this.rdbRosu.AutoSize = true;
+            this.rdbRosu.Location = new System.Drawing.Point(9, 19);
+            this.rdbRosu.Name = "rdbRosu";
+            this.rdbRosu.Size = new System.Drawing.Size(50, 17);
+            this.rdbRosu.TabIndex = 0;
+            this.rdbRosu.TabStop = true;
+            this.rdbRosu.Text = "Rosu";
+            this.rdbRosu.UseVisualStyleBackColor = true;
+            // 
+            // rdbPortocaliu
+            // 
+            this.rdbPortocaliu.AutoSize = true;
+            this.rdbPortocaliu.Location = new System.Drawing.Point(9, 66);
+            this.rdbPortocaliu.Name = "rdbPortocaliu";
+            this.rdbPortocaliu.Size = new System.Drawing.Size(72, 17);
+            this.rdbPortocaliu.TabIndex = 26;
+            this.rdbPortocaliu.TabStop = true;
+            this.rdbPortocaliu.Text = "Portocaliu";
+            this.rdbPortocaliu.UseVisualStyleBackColor = true;
+            // 
+            // lblMesaj
+            // 
+            this.lblMesaj.AutoSize = true;
+            this.lblMesaj.Location = new System.Drawing.Point(184, 563);
+            this.lblMesaj.Name = "lblMesaj";
+            this.lblMesaj.Size = new System.Drawing.Size(0, 13);
+            this.lblMesaj.TabIndex = 41;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 588);
+            this.ClientSize = new System.Drawing.Size(1086, 588);
+            this.Controls.Add(this.lblMesaj);
+            this.Controls.Add(this.gpbOptiuni);
+            this.Controls.Add(this.gpbCuloar);
             this.Controls.Add(this.lblVechime);
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.txtAn);
@@ -277,7 +425,6 @@
             this.Controls.Add(this.btnCauta);
             this.Controls.Add(this.rtbAfisare);
             this.Controls.Add(this.btnAfiseaza);
-            this.Controls.Add(this.lblAdauga);
             this.Controls.Add(this.btnMedie);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtPrenume);
@@ -288,6 +435,10 @@
             this.Controls.Add(this.lblNume);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.gpbCuloar.ResumeLayout(false);
+            this.gpbCuloar.PerformLayout();
+            this.gpbOptiuni.ResumeLayout(false);
+            this.gpbOptiuni.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,6 +468,18 @@
         private System.Windows.Forms.Label lblAn;
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label lblVechime;
+        private System.Windows.Forms.GroupBox gpbCuloar;
+        private System.Windows.Forms.CheckBox ckbLuminiCeata;
+        private System.Windows.Forms.CheckBox ckbABS;
+        private System.Windows.Forms.CheckBox ckbScaunePiele;
+        private System.Windows.Forms.CheckBox ckbAerConditionat;
+        private System.Windows.Forms.GroupBox gpbOptiuni;
+        private System.Windows.Forms.RadioButton rdbAlb;
+        private System.Windows.Forms.RadioButton rdbGri;
+        private System.Windows.Forms.RadioButton rdbAlbastru;
+        private System.Windows.Forms.RadioButton rdbRosu;
+        private System.Windows.Forms.RadioButton rdbPortocaliu;
+        private System.Windows.Forms.Label lblMesaj;
     }
 }
 
