@@ -13,8 +13,9 @@ namespace Masina
         //int numar_pistoane;
         //int capacitate_cilindrica;
         //int nr_locuri;
-        public string nume_vanzator;
-        public string nume_cumparator;
+        public string nume_vanzator { get; set; }
+        //public string 
+        public string prenume_vanzator { get; set; }
         //int pret;
         //int an;
 
@@ -30,8 +31,8 @@ namespace Masina
         private const int ID = 0;
         private const int FIRMA = 1;
         private const int MODEL = 2;
-        private const int NUMECUMP = 3;
-        private const int NUMEVANZ = 4;
+        private const int NUMEVANZ = 3;
+        private const int PRENUMEVANZ = 4;
         private const int AN = 5;
         private const int PRET = 6;
         private const int CULOARE = 7;
@@ -67,10 +68,18 @@ namespace Masina
         public string firma { get; set; }
         public string model { get; set; }
 
+        public int Vechime
+        {
+            get
+            {
+                return 2020 - an;
+                
+            }
+        }
         public masina()
         {
-            nume_cumparator = string.Empty;
             nume_vanzator = string.Empty;
+            prenume_vanzator = string.Empty;
             model = string.Empty;
             firma = string.Empty;
             an = 0;
@@ -78,10 +87,10 @@ namespace Masina
             Culoare = 0;
             OptiuniMasina = 0;
         }
-        public masina(string numev, string numec, string firmaa, string modell)
+        public masina(string numev, string prenumev, string firmaa, string modell)
         {
-            nume_cumparator = numec;
             nume_vanzator = numev;
+            prenume_vanzator = prenumev;
             firma = firmaa;
             model = modell;
             IdUltimaMasina++;
@@ -109,8 +118,8 @@ namespace Masina
             IdMasina = Convert.ToInt32(dateFisier[ID]);
             firma = dateFisier[FIRMA];
             model = dateFisier[MODEL];
-            nume_cumparator = dateFisier[NUMECUMP];
             nume_vanzator = dateFisier[NUMEVANZ];
+            prenume_vanzator = dateFisier[PRENUMEVANZ];
             string anbuf = dateFisier[AN];
             an = Int32.Parse(anbuf);
             string pretbuf = dateFisier[PRET];
@@ -123,7 +132,7 @@ namespace Masina
         public string afisare()
         {
             //Console.WriteLine("Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
-            string s = string.Format(" Producator masina :{0}, model: {1}, nume cumparator: {2}, nume vanzator: {3}", firma, model, nume_cumparator, nume_vanzator);
+            string s = string.Format(" Producator masina :{0}, model: {1}, nume vanzator: {2} {3}, cu pretul:{4} si din anul:{5}", firma, model, nume_vanzator, prenume_vanzator,pret,an);
             return s;
         }
 
@@ -149,14 +158,14 @@ namespace Masina
             {
                 sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret, Culoare.ToString(), OptiuniMasina);
             }
-            string s = string.Format("ID-ul Masina: {3}\nMarca: {0} \nmodelul {1} \nEste din {2}  \nNume vanzator: {4}\nNume cumparator(daca exista): {5}\n", firma, model, sAnPret,IdMasina,nume_vanzator,nume_cumparator);
+            string s = string.Format("ID-ul Masina: {3}\nMarca: {0} \nmodelul {1} \nEste din {2}  \nNume vanzator: {4} {5}\n", firma, model, sAnPret,IdMasina,nume_vanzator,prenume_vanzator);
 
             return s;
         }
         public string ConversieLaSir_PentruFisier()
         {
             string s = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}",
-                SEPARATOR_PRINCIPAL_FISIER, IdMasina.ToString(), (firma ?? " NECUNOSCUT "), (model ?? " NECUNOSCUT "), (nume_cumparator ?? " NECUNOSCUT "), (nume_vanzator ?? " NECUNOSCUT ") ,an, pret,Culoare,OptiuniMasina);
+                SEPARATOR_PRINCIPAL_FISIER, IdMasina.ToString(), (firma ?? " NECUNOSCUT "), (model ?? " NECUNOSCUT "), (nume_vanzator  ?? " NECUNOSCUT "), (prenume_vanzator ?? " NECUNOSCUT ") ,an, pret,Culoare,OptiuniMasina);
 
             return s;
         }

@@ -1,5 +1,6 @@
 ﻿using Masina;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace NivelAccesDate
 {
@@ -9,5 +10,8 @@ namespace NivelAccesDate
         void AddMasina(masina s);
         masina[] GetMasina(out int nrMasini);
         void edititare(masina[] v);
+        ArrayList GetMasini();
+        masina GetMasina(string nume,string prenume,string model);
+        bool UpdateMasina(masina studentActualizat);
     }
 }

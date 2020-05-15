@@ -226,7 +226,7 @@ namespace Aplicatie
             else if (txtModel.Text == string.Empty)
                 return 4;
             else if(!success1)
-            return 5;
+                return 5;
             else if (!success2)
                 return 6;
             return 0;

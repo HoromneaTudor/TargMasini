@@ -1,5 +1,6 @@
 ﻿using Masina;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace NivelAccesDate
@@ -24,6 +25,31 @@ namespace NivelAccesDate
         }
 
         public void edititare(masina[] v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ArrayList GetMasini()
+        {
+            throw new NotImplementedException();
+        }
+
+        public masina GetMasina()
+        {
+            throw new NotImplementedException();
+        }
+
+        public masina GetMasina(string nume, string prenume, string model, string pret)
+        {
+            throw new NotImplementedException();
+        }
+
+        public masina GetMasina(string nume, string prenume, string model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateMasina(masina studentActualizat)
         {
             throw new NotImplementedException();
         }

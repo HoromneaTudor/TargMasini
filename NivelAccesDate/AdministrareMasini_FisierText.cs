@@ -1,6 +1,6 @@
 ﻿using Masina;
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.IO;
 
 namespace NivelAccesDate
@@ -8,7 +8,9 @@ namespace NivelAccesDate
     //clasa AdministrareStudenti_FisierText implementeaza interfata IStocareData
     public class AdministrareMasini_FisierText : IStocareData
     {
+        private const int ID_PRIMA_MASINA = 1;
         private const int PAS_ALOCARE = 10;
+        private const int INCREMENT = 1;
         string NumeFisier { get; set; }
         public AdministrareMasini_FisierText(string numeFisier)
         {
@@ -20,16 +22,18 @@ namespace NivelAccesDate
             //instructiunea 'using' va apela sFisierText.Close();
             //using (Stream sFisierText = File.Open(numeFisier, FileMode.OpenOrCreate)) { }
         }
-        public void AddMasina(masina s)
+        public void AddMasina(masina m)
         {
+            m.IdMasina = GetId();
             try
             {
+
                 //instructiunea 'using' va apela la final swFisierText.Close();
                 //al doilea parametru setat la 'true' al constructorului StreamWriter indica modul 'append' de deschidere al fisierului
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, true))
                 {
                     //swFisierText.WriteLine(s.ConversieLaSir_PentruFisier());
-                    swFisierText.WriteLine(s.ConversieLaSir_PentruFisier());
+                    swFisierText.WriteLine(m.ConversieLaSir_PentruFisier());
                 }
             }
             catch (IOException eIO)
@@ -42,9 +46,9 @@ namespace NivelAccesDate
             }
         }
 
-        public masina[] GetMasina(out int nrStudenti)
+        public ArrayList GetMasini()
         {
-            masina[] studenti = new masina[PAS_ALOCARE];
+            ArrayList masini = new ArrayList();
 
             try
             {
@@ -52,15 +56,46 @@ namespace NivelAccesDate
                 using (StreamReader sr = new StreamReader(NumeFisier))
                 {
                     string line;
-                    nrStudenti = 0;
 
                     //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                     while ((line = sr.ReadLine()) != null)
                     {
-                        studenti[nrStudenti++] = new masina(line);
-                        if (nrStudenti == PAS_ALOCARE)
+                        masina m = new masina(line);
+                        masini.Add(m);
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return masini;
+        }
+
+        public masina[] GetMasina(out int nrMasini)
+        {
+            masina[] m = new masina[PAS_ALOCARE];
+
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+                    nrMasini = 0;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        m[nrMasini++] = new masina(line);
+                        if (nrMasini == PAS_ALOCARE)
                         {
-                            Array.Resize(ref studenti, nrStudenti + PAS_ALOCARE);
+                            Array.Resize(ref m, nrMasini + PAS_ALOCARE);
                         }
                     }
                 }
@@ -74,8 +109,104 @@ namespace NivelAccesDate
                 throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
             }
 
-            return studenti;
+            return m;
         }
+        public masina GetMasina(string nume, string prenume,string modell)
+        {
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        masina m = new masina(line);
+                        if (m.nume_vanzator.Equals(nume) && m.prenume_vanzator.Equals(prenume) && m.model.Equals(modell))
+                            return m;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return null;
+        }
+
+
+        public bool UpdateMasina(masina studentActualizat)
+        {
+            ArrayList studenti = GetMasini();
+            bool actualizareCuSucces = false;
+            try
+            {
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
+                {
+                    foreach (masina stud in studenti)
+                    {
+                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                        if (stud.IdMasina != studentActualizat.IdMasina)
+                        {
+                            swFisierText.WriteLine(stud.ConversieLaSir_PentruFisier());
+                        }
+                        else
+                        {
+                            swFisierText.WriteLine(studentActualizat.ConversieLaSir_PentruFisier());
+                        }
+                    }
+                    actualizareCuSucces = true;
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return actualizareCuSucces;
+        }
+
+        private int GetId()
+        {
+            int IdMasina = ID_PRIMA_MASINA;
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        masina s = new masina(line);
+                        IdMasina = s.IdMasina + INCREMENT;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return IdMasina;
+        }
+
         public void edititare(masina[] v)
         {
             using (StreamWriter streamWriter = new StreamWriter(NumeFisier))
@@ -89,5 +220,6 @@ namespace NivelAccesDate
 
         }
 
+       
     }
 }

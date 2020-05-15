@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masina", "Masina\Masina.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargMasini-Forma", "TargMasini-Forma\TargMasini-Forma.csproj", "{3516FBCC-6A91-475A-A96B-FC56D0A55E9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargMasini-Forma-toolbox", "TargMasini-Forma-toolbox\TargMasini-Forma-toolbox.csproj", "{0545D02C-4855-4FC3-8C7D-ABB3D5F94869}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{3516FBCC-6A91-475A-A96B-FC56D0A55E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3516FBCC-6A91-475A-A96B-FC56D0A55E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3516FBCC-6A91-475A-A96B-FC56D0A55E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0545D02C-4855-4FC3-8C7D-ABB3D5F94869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0545D02C-4855-4FC3-8C7D-ABB3D5F94869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0545D02C-4855-4FC3-8C7D-ABB3D5F94869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0545D02C-4855-4FC3-8C7D-ABB3D5F94869}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
