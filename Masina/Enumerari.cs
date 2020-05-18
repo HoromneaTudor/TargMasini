@@ -35,4 +35,10 @@ namespace Masina
         ABS = 4,
         LuminiDeCeata = 8,
     };
+    //public enum Tip
+    //{
+    //    Motocicleta=0,
+    //    Masina=1,
+    //    Camion=2,
+    //};
 }

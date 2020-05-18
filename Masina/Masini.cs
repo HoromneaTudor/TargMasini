@@ -7,6 +7,7 @@ using System.IO;
 
 namespace Masina
 {
+    [Serializable]
     public class masina
     {
         //string marca;
@@ -37,6 +38,8 @@ namespace Masina
         private const int PRET = 6;
         private const int CULOARE = 7;
         private const int OPTIUNI = 8;
+        private const int TIP = 9;
+        //private const int DATAACTUALIZARE = 10;
 
         public Optiuni OptiuniMasina { get; set; }
         public CuloareMasina Culoare { get; set; }
@@ -48,6 +51,8 @@ namespace Masina
         public int an { get; set; }
         public string firma { get; set; }
         public string model { get; set; }
+        public string tip { get; set; }
+        public DateTime DataActualizare { get; set; }
 
         public int Vechime
         {
@@ -67,6 +72,7 @@ namespace Masina
             pret = 0;
             Culoare = 0;
             OptiuniMasina = 0;
+            tip = "necunoscut";
         }
         public masina(string numev, string prenumev, string firmaa, string modell)
         {
@@ -78,6 +84,7 @@ namespace Masina
             IdMasina = IdUltimaMasina;
             Culoare = 0;
             OptiuniMasina = 0;
+            tip = "necunoscut";
 
         }
 
@@ -107,6 +114,8 @@ namespace Masina
             pret = Int32.Parse(pretbuf);
             Culoare = (CuloareMasina)Enum.Parse(typeof(CuloareMasina), dateFisier[CULOARE]);
             OptiuniMasina = (Optiuni)Enum.Parse(typeof(Optiuni), dateFisier[OPTIUNI]);
+            tip = dateFisier[TIP];
+            //DataActualizare = (DateTime) dateFisier[DATAACTUALIZARE];
             IdUltimaMasina = IdMasina;
            
         }
@@ -139,14 +148,14 @@ namespace Masina
             {
                 sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret, Culoare.ToString(), OptiuniMasina);
             }
-            string s = string.Format("ID-ul Masina: {3}\nMarca: {0} \nmodelul {1} \nEste din {2}  \nNume vanzator: {4} {5}\n", firma, model, sAnPret,IdMasina,nume_vanzator,prenume_vanzator);
+            string s = string.Format("ID-ul Masina: {3}\nMarca: {0} \nmodelul {1} \nEste din {2}  \nNume vanzator: {4} {5}\nTip vehicul: {6}/nData Adaugare/Actualizare:{7}", firma, model, sAnPret,IdMasina,nume_vanzator,prenume_vanzator,tip,DataActualizare);
 
             return s;
         }
         public string ConversieLaSir_PentruFisier()
         {
-            string s = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}",
-                SEPARATOR_PRINCIPAL_FISIER, IdMasina.ToString(), (firma ?? " NECUNOSCUT "), (model ?? " NECUNOSCUT "), (nume_vanzator  ?? " NECUNOSCUT "), (prenume_vanzator ?? " NECUNOSCUT ") ,an, pret,Culoare,OptiuniMasina);
+            string s = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}{0}{10}{0}{11}",
+                SEPARATOR_PRINCIPAL_FISIER, IdMasina.ToString(), (firma ?? " NECUNOSCUT "), (model ?? " NECUNOSCUT "), (nume_vanzator  ?? " NECUNOSCUT "), (prenume_vanzator ?? " NECUNOSCUT ") ,an, pret,Culoare,OptiuniMasina,tip,DataActualizare);
 
             return s;
         }
@@ -175,7 +184,11 @@ namespace Masina
         //        }
         //    }
         //}
-        
+        public override string ToString()
+        {
+            return ConversieLaSir_PentruFisier();
+        }
+
 
     }
 }

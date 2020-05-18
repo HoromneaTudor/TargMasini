@@ -16,11 +16,12 @@ namespace TargMasini_Forma_toolbox
     public partial class Form1 : Form
     {
         IStocareData adminMasini;
-        ArrayList optiuniSelectate = new ArrayList();
+        List<masina> optiuniSelectate = new List<masina>();
         public Form1()
         {
             InitializeComponent();
             adminMasini = StocareFactory.GetAdministratorStocare();
+            this.Width = 400;
         
         }
 
@@ -66,6 +67,11 @@ namespace TargMasini_Forma_toolbox
                 m.SetAnPret(an,pret);
                 m.Culoare = GetCuloareMasina();
                 m.OptiuniMasina = GetOptiuni();
+                if(cmbTip.Text!="")
+                {
+                    m.tip = cmbTip.Text;
+                }
+                m.DataActualizare = DateTime.Now;
                 adminMasini.AddMasina(m);
                 lblAdauga.Text = "Masina a fost adaugata cu succes";
             }
@@ -140,15 +146,40 @@ namespace TargMasini_Forma_toolbox
 
         private void btnAfiseaza_Click(object sender, EventArgs e)
         {
-            rtbAfisare.Clear();
-            ArrayList masini = adminMasini.GetMasini();
-            foreach(masina m in masini)
+            //rtbAfisare.Clear();
+            this.Width = 1590;
+            List<masina> masini = adminMasini.GetMasini();
+            //foreach (masina m in masini)
+            //{
+            //    rtbAfisare.AppendText(m.IdMasina.ToString());
+            //    rtbAfisare.AppendText(" ");
+            //    rtbAfisare.AppendText(m.afisare());
+            //    rtbAfisare.AppendText(Environment.NewLine);
+            //}
+            AdaugaMasinaInControlListbox(masini);
+            AdaugaMasiniInControlDataGridView(masini);
+        }
+
+        private void AdaugaMasinaInControlListbox(List<masina> masini)
+        {
+            //rtbAfisare.Clear();
+            //var antetTabel = String.Format("{0,-5}{1,-35}{2,20}{3,10}\n", "Id", "Nume Prenume", "ProgramStudiu", "Medie");
+            //rtbAfisare.AppendText(antetTabel);
+            lstAfisare.Items.Clear();
+
+           
+            foreach (masina m in masini)
             {
-                rtbAfisare.AppendText(m.IdMasina.ToString());
-                rtbAfisare.AppendText(" ");
-                rtbAfisare.AppendText(m.ConversieLaSir());
-                rtbAfisare.AppendText(Environment.NewLine);
+                lstAfisare.Items.Add(m);
+                //var linieTabel = String.Format("{0,-5}{1,-35}{2,20}{3,10}\n", m.IdMasina, m.nume_vanzator,m.prenume_vanzator,m.model);
+                //rtbAfisare.AppendText(linieTabel);
             }
+        }
+        private void AdaugaMasiniInControlDataGridView(List<masina> masini)
+        {
+            dataGridMasini.DataSource = null;
+            dataGridMasini.DataSource = masini.Select(m => new { m.IdMasina, m.nume_vanzator, m.prenume_vanzator , m.tip , m.DataActualizare }).ToList();
+            
         }
 
         private void btnCauta_Click(object sender, EventArgs e)
@@ -168,12 +199,18 @@ namespace TargMasini_Forma_toolbox
             {
                 txtNume.Enabled = false;
                 txtPrenume.Enabled = false;
+                txtAn.Enabled = false;
+                txtMarca.Enabled = false;
+                txtModel.Enabled = false;
 
             }
             else
             {
                 txtNume.Enabled = true;
                 txtPrenume.Enabled = true;
+                txtAn.Enabled = true;
+                txtMarca.Enabled = true;
+                txtModel.Enabled = true;
             }
         }
 
@@ -185,19 +222,28 @@ namespace TargMasini_Forma_toolbox
             if(m!=null)
             {
 
-                if (txtPret.Text != string.Empty)
+                //if (txtPret.Text != string.Empty)
+                //{
+                //    int prett = Int32.Parse(txtPret.Text);
+                //    m.pret = prett;
+                //}
+                //m.Culoare = GetCuloareMasina();
+                //m.OptiuniMasina = GetOptiuni();
+                //adminMasini.UpdateMasina(m);
+                using (FormaEditare formEdit = new FormaEditare(m)) 
                 {
-                    int prett = Int32.Parse(txtPret.Text);
-                    m.pret = prett;
+                    var dr = formEdit.ShowDialog(this);
+                    if(dr==DialogResult.OK)
+                    {
+                        lblModifica.Text = "Schimbare efectuata cu succes";
+                    }
+                    formEdit.Close();
                 }
-                m.Culoare = GetCuloareMasina();
-                m.OptiuniMasina = GetOptiuni();
-                adminMasini.UpdateMasina(m);
-
             }
+
             else
             {
-                lblModifica.Text = "Student inexistent";
+                lblModifica.Text = "Masina inexistent";
             }
         }
         //private void ckbOptiuni_CheckedChanged(object sender, EventArgs e)
@@ -211,11 +257,11 @@ namespace TargMasini_Forma_toolbox
                 
         //}
 
-        private Optiuni GetOptiuni()
+        private Optiuni GetOptiuni()    //modificat
         {
             int i = 0;
             if (ckbAerConditionat.Checked)
-                i++;
+                i++;                    //i=i | optiuni.aerconditionat ideie
             if (ckbScaunePiele.Checked)
                 i += 2;
             if (ckbABS.Checked)
@@ -256,5 +302,64 @@ namespace TargMasini_Forma_toolbox
             return CuloareMasina.Inexistenta;
 
         }
+
+        private void dataGridMasini_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lstAfisare_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ResetareControale();
+            masina m = null;
+            try
+            {
+                m = adminMasini.GetMasinaByIndex(lstAfisare.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                lblMesaj.Text = "Eroare: " + ex.Message;
+            }
+
+            if (m != null)
+            {
+                lblID.Text = m.IdMasina.ToString();
+
+                txtNume.Text = m.nume_vanzator;
+                txtPrenume.Text = m.prenume_vanzator;
+                txtModel.Text = m.model;
+
+                foreach (var prgstd in gpbCuloar.Controls)
+                {
+                    if (prgstd is RadioButton)
+                    {
+                        var prgstdBox = prgstd as RadioButton;
+                        if (prgstdBox.Text == m.Culoare.ToString())
+                        {
+                            prgstdBox.Checked = true;
+                        }
+                    }
+                }
+
+                foreach (var optiune in gpbOptiuni.Controls)
+                {
+                    if (optiune is CheckBox)
+                    {
+                        var optiuneBox = optiune as CheckBox;
+                        foreach (var dis in m.OptiuniMasina.ToString())
+                            if (optiuneBox.Text.Equals(dis))
+                                optiuneBox.Checked = true;
+                    }
+                }
+
+                cmbTip.Text = m.tip.ToString();
+                //txtNote.Text = String.Join(" ", s.GetNote());
+            }
+        }
+        
+        //private string getTip(masina m)
+        //{
+        //    return m.tip;
+        //}
     }
 }

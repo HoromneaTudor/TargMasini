@@ -32,7 +32,6 @@
             this.btnModifica = new System.Windows.Forms.Button();
             this.lblCauta = new System.Windows.Forms.Label();
             this.btnCauta = new System.Windows.Forms.Button();
-            this.rtbAfisare = new System.Windows.Forms.RichTextBox();
             this.btnAfiseaza = new System.Windows.Forms.Button();
             this.lblAdauga = new System.Windows.Forms.Label();
             this.btnMedie = new System.Windows.Forms.Button();
@@ -51,32 +50,37 @@
             this.lblModel = new System.Windows.Forms.Label();
             this.lblVechime = new System.Windows.Forms.Label();
             this.gpbCuloar = new System.Windows.Forms.GroupBox();
+            this.rdbPortocaliu = new System.Windows.Forms.RadioButton();
+            this.rdbAlb = new System.Windows.Forms.RadioButton();
+            this.rdbGri = new System.Windows.Forms.RadioButton();
+            this.rdbRosu = new System.Windows.Forms.RadioButton();
+            this.rdbAlbastru = new System.Windows.Forms.RadioButton();
             this.ckbLuminiCeata = new System.Windows.Forms.CheckBox();
             this.ckbABS = new System.Windows.Forms.CheckBox();
             this.ckbScaunePiele = new System.Windows.Forms.CheckBox();
             this.ckbAerConditionat = new System.Windows.Forms.CheckBox();
             this.gpbOptiuni = new System.Windows.Forms.GroupBox();
-            this.rdbAlb = new System.Windows.Forms.RadioButton();
-            this.rdbGri = new System.Windows.Forms.RadioButton();
-            this.rdbAlbastru = new System.Windows.Forms.RadioButton();
-            this.rdbRosu = new System.Windows.Forms.RadioButton();
-            this.rdbPortocaliu = new System.Windows.Forms.RadioButton();
             this.lblMesaj = new System.Windows.Forms.Label();
+            this.lstAfisare = new System.Windows.Forms.ListBox();
+            this.dataGridMasini = new System.Windows.Forms.DataGridView();
+            this.cmbTip = new System.Windows.Forms.ComboBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
             this.SuspendLayout();
             // 
             // lblModifica
             // 
             this.lblModifica.AutoSize = true;
-            this.lblModifica.Location = new System.Drawing.Point(220, 512);
+            this.lblModifica.Location = new System.Drawing.Point(160, 516);
             this.lblModifica.Name = "lblModifica";
             this.lblModifica.Size = new System.Drawing.Size(0, 13);
             this.lblModifica.TabIndex = 31;
             // 
             // btnModifica
             // 
-            this.btnModifica.Location = new System.Drawing.Point(124, 509);
+            this.btnModifica.Location = new System.Drawing.Point(64, 513);
             this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
             this.btnModifica.Size = new System.Drawing.Size(56, 19);
@@ -88,7 +92,7 @@
             // lblCauta
             // 
             this.lblCauta.AutoSize = true;
-            this.lblCauta.Location = new System.Drawing.Point(518, 36);
+            this.lblCauta.Location = new System.Drawing.Point(397, 43);
             this.lblCauta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCauta.Name = "lblCauta";
             this.lblCauta.Size = new System.Drawing.Size(0, 13);
@@ -96,7 +100,7 @@
             // 
             // btnCauta
             // 
-            this.btnCauta.Location = new System.Drawing.Point(124, 476);
+            this.btnCauta.Location = new System.Drawing.Point(64, 480);
             this.btnCauta.Margin = new System.Windows.Forms.Padding(2);
             this.btnCauta.Name = "btnCauta";
             this.btnCauta.Size = new System.Drawing.Size(56, 19);
@@ -105,18 +109,9 @@
             this.btnCauta.UseVisualStyleBackColor = true;
             this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
             // 
-            // rtbAfisare
-            // 
-            this.rtbAfisare.Location = new System.Drawing.Point(413, 172);
-            this.rtbAfisare.Margin = new System.Windows.Forms.Padding(2);
-            this.rtbAfisare.Name = "rtbAfisare";
-            this.rtbAfisare.Size = new System.Drawing.Size(539, 322);
-            this.rtbAfisare.TabIndex = 27;
-            this.rtbAfisare.Text = "";
-            // 
             // btnAfiseaza
             // 
-            this.btnAfiseaza.Location = new System.Drawing.Point(124, 210);
+            this.btnAfiseaza.Location = new System.Drawing.Point(64, 214);
             this.btnAfiseaza.Margin = new System.Windows.Forms.Padding(2);
             this.btnAfiseaza.Name = "btnAfiseaza";
             this.btnAfiseaza.Size = new System.Drawing.Size(56, 19);
@@ -136,7 +131,7 @@
             // 
             // btnMedie
             // 
-            this.btnMedie.Location = new System.Drawing.Point(124, 145);
+            this.btnMedie.Location = new System.Drawing.Point(64, 149);
             this.btnMedie.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedie.Name = "btnMedie";
             this.btnMedie.Size = new System.Drawing.Size(56, 19);
@@ -171,7 +166,7 @@
             // 
             // btnAdauga
             // 
-            this.btnAdauga.Location = new System.Drawing.Point(124, 172);
+            this.btnAdauga.Location = new System.Drawing.Point(64, 176);
             this.btnAdauga.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdauga.Name = "btnAdauga";
             this.btnAdauga.Size = new System.Drawing.Size(56, 23);
@@ -212,7 +207,7 @@
             // 
             // txtPret
             // 
-            this.txtPret.Location = new System.Drawing.Point(413, 108);
+            this.txtPret.Location = new System.Drawing.Point(295, 110);
             this.txtPret.Margin = new System.Windows.Forms.Padding(2);
             this.txtPret.Name = "txtPret";
             this.txtPret.Size = new System.Drawing.Size(76, 20);
@@ -220,7 +215,7 @@
             // 
             // txtAn
             // 
-            this.txtAn.Location = new System.Drawing.Point(413, 74);
+            this.txtAn.Location = new System.Drawing.Point(295, 76);
             this.txtAn.Margin = new System.Windows.Forms.Padding(2);
             this.txtAn.Name = "txtAn";
             this.txtAn.Size = new System.Drawing.Size(76, 20);
@@ -228,7 +223,7 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(413, 46);
+            this.txtModel.Location = new System.Drawing.Point(295, 48);
             this.txtModel.Margin = new System.Windows.Forms.Padding(2);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(76, 20);
@@ -237,7 +232,7 @@
             // lblPret
             // 
             this.lblPret.AutoSize = true;
-            this.lblPret.Location = new System.Drawing.Point(350, 108);
+            this.lblPret.Location = new System.Drawing.Point(232, 110);
             this.lblPret.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPret.Name = "lblPret";
             this.lblPret.Size = new System.Drawing.Size(26, 13);
@@ -247,7 +242,7 @@
             // lblAn
             // 
             this.lblAn.AutoSize = true;
-            this.lblAn.Location = new System.Drawing.Point(350, 79);
+            this.lblAn.Location = new System.Drawing.Point(232, 81);
             this.lblAn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAn.Name = "lblAn";
             this.lblAn.Size = new System.Drawing.Size(20, 13);
@@ -257,7 +252,7 @@
             // lblModel
             // 
             this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(350, 50);
+            this.lblModel.Location = new System.Drawing.Point(232, 52);
             this.lblModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(36, 13);
@@ -267,7 +262,7 @@
             // lblVechime
             // 
             this.lblVechime.AutoSize = true;
-            this.lblVechime.Location = new System.Drawing.Point(220, 151);
+            this.lblVechime.Location = new System.Drawing.Point(160, 155);
             this.lblVechime.Name = "lblVechime";
             this.lblVechime.Size = new System.Drawing.Size(0, 13);
             this.lblVechime.TabIndex = 38;
@@ -281,12 +276,67 @@
             this.gpbCuloar.Controls.Add(this.lblAdauga);
             this.gpbCuloar.Controls.Add(this.rdbRosu);
             this.gpbCuloar.Controls.Add(this.rdbAlbastru);
-            this.gpbCuloar.Location = new System.Drawing.Point(124, 261);
+            this.gpbCuloar.Location = new System.Drawing.Point(64, 265);
             this.gpbCuloar.Name = "gpbCuloar";
             this.gpbCuloar.Size = new System.Drawing.Size(244, 100);
             this.gpbCuloar.TabIndex = 39;
             this.gpbCuloar.TabStop = false;
             this.gpbCuloar.Text = "Culoare";
+            // 
+            // rdbPortocaliu
+            // 
+            this.rdbPortocaliu.AutoSize = true;
+            this.rdbPortocaliu.Location = new System.Drawing.Point(9, 66);
+            this.rdbPortocaliu.Name = "rdbPortocaliu";
+            this.rdbPortocaliu.Size = new System.Drawing.Size(72, 17);
+            this.rdbPortocaliu.TabIndex = 26;
+            this.rdbPortocaliu.TabStop = true;
+            this.rdbPortocaliu.Text = "Portocaliu";
+            this.rdbPortocaliu.UseVisualStyleBackColor = true;
+            // 
+            // rdbAlb
+            // 
+            this.rdbAlb.AutoSize = true;
+            this.rdbAlb.Location = new System.Drawing.Point(101, 43);
+            this.rdbAlb.Name = "rdbAlb";
+            this.rdbAlb.Size = new System.Drawing.Size(40, 17);
+            this.rdbAlb.TabIndex = 3;
+            this.rdbAlb.TabStop = true;
+            this.rdbAlb.Text = "Alb";
+            this.rdbAlb.UseVisualStyleBackColor = true;
+            // 
+            // rdbGri
+            // 
+            this.rdbGri.AutoSize = true;
+            this.rdbGri.Location = new System.Drawing.Point(9, 43);
+            this.rdbGri.Name = "rdbGri";
+            this.rdbGri.Size = new System.Drawing.Size(38, 17);
+            this.rdbGri.TabIndex = 2;
+            this.rdbGri.TabStop = true;
+            this.rdbGri.Text = "Gri";
+            this.rdbGri.UseVisualStyleBackColor = true;
+            // 
+            // rdbRosu
+            // 
+            this.rdbRosu.AutoSize = true;
+            this.rdbRosu.Location = new System.Drawing.Point(9, 19);
+            this.rdbRosu.Name = "rdbRosu";
+            this.rdbRosu.Size = new System.Drawing.Size(50, 17);
+            this.rdbRosu.TabIndex = 0;
+            this.rdbRosu.TabStop = true;
+            this.rdbRosu.Text = "Rosu";
+            this.rdbRosu.UseVisualStyleBackColor = true;
+            // 
+            // rdbAlbastru
+            // 
+            this.rdbAlbastru.AutoSize = true;
+            this.rdbAlbastru.Location = new System.Drawing.Point(101, 19);
+            this.rdbAlbastru.Name = "rdbAlbastru";
+            this.rdbAlbastru.Size = new System.Drawing.Size(63, 17);
+            this.rdbAlbastru.TabIndex = 1;
+            this.rdbAlbastru.TabStop = true;
+            this.rdbAlbastru.Text = "Albastru";
+            this.rdbAlbastru.UseVisualStyleBackColor = true;
             // 
             // ckbLuminiCeata
             // 
@@ -334,67 +384,12 @@
             this.gpbOptiuni.Controls.Add(this.ckbAerConditionat);
             this.gpbOptiuni.Controls.Add(this.ckbScaunePiele);
             this.gpbOptiuni.Controls.Add(this.ckbLuminiCeata);
-            this.gpbOptiuni.Location = new System.Drawing.Point(124, 367);
+            this.gpbOptiuni.Location = new System.Drawing.Point(64, 371);
             this.gpbOptiuni.Name = "gpbOptiuni";
             this.gpbOptiuni.Size = new System.Drawing.Size(244, 100);
             this.gpbOptiuni.TabIndex = 40;
             this.gpbOptiuni.TabStop = false;
             this.gpbOptiuni.Text = "Optiuni";
-            // 
-            // rdbAlb
-            // 
-            this.rdbAlb.AutoSize = true;
-            this.rdbAlb.Location = new System.Drawing.Point(101, 43);
-            this.rdbAlb.Name = "rdbAlb";
-            this.rdbAlb.Size = new System.Drawing.Size(40, 17);
-            this.rdbAlb.TabIndex = 3;
-            this.rdbAlb.TabStop = true;
-            this.rdbAlb.Text = "Alb";
-            this.rdbAlb.UseVisualStyleBackColor = true;
-            // 
-            // rdbGri
-            // 
-            this.rdbGri.AutoSize = true;
-            this.rdbGri.Location = new System.Drawing.Point(9, 43);
-            this.rdbGri.Name = "rdbGri";
-            this.rdbGri.Size = new System.Drawing.Size(38, 17);
-            this.rdbGri.TabIndex = 2;
-            this.rdbGri.TabStop = true;
-            this.rdbGri.Text = "Gri";
-            this.rdbGri.UseVisualStyleBackColor = true;
-            // 
-            // rdbAlbastru
-            // 
-            this.rdbAlbastru.AutoSize = true;
-            this.rdbAlbastru.Location = new System.Drawing.Point(101, 19);
-            this.rdbAlbastru.Name = "rdbAlbastru";
-            this.rdbAlbastru.Size = new System.Drawing.Size(63, 17);
-            this.rdbAlbastru.TabIndex = 1;
-            this.rdbAlbastru.TabStop = true;
-            this.rdbAlbastru.Text = "Albastru";
-            this.rdbAlbastru.UseVisualStyleBackColor = true;
-            // 
-            // rdbRosu
-            // 
-            this.rdbRosu.AutoSize = true;
-            this.rdbRosu.Location = new System.Drawing.Point(9, 19);
-            this.rdbRosu.Name = "rdbRosu";
-            this.rdbRosu.Size = new System.Drawing.Size(50, 17);
-            this.rdbRosu.TabIndex = 0;
-            this.rdbRosu.TabStop = true;
-            this.rdbRosu.Text = "Rosu";
-            this.rdbRosu.UseVisualStyleBackColor = true;
-            // 
-            // rdbPortocaliu
-            // 
-            this.rdbPortocaliu.AutoSize = true;
-            this.rdbPortocaliu.Location = new System.Drawing.Point(9, 66);
-            this.rdbPortocaliu.Name = "rdbPortocaliu";
-            this.rdbPortocaliu.Size = new System.Drawing.Size(72, 17);
-            this.rdbPortocaliu.TabIndex = 26;
-            this.rdbPortocaliu.TabStop = true;
-            this.rdbPortocaliu.Text = "Portocaliu";
-            this.rdbPortocaliu.UseVisualStyleBackColor = true;
             // 
             // lblMesaj
             // 
@@ -404,11 +399,54 @@
             this.lblMesaj.Size = new System.Drawing.Size(0, 13);
             this.lblMesaj.TabIndex = 41;
             // 
+            // lstAfisare
+            // 
+            this.lstAfisare.FormattingEnabled = true;
+            this.lstAfisare.Location = new System.Drawing.Point(414, 179);
+            this.lstAfisare.Name = "lstAfisare";
+            this.lstAfisare.Size = new System.Drawing.Size(544, 316);
+            this.lstAfisare.TabIndex = 42;
+            this.lstAfisare.SelectedIndexChanged += new System.EventHandler(this.lstAfisare_SelectedIndexChanged);
+            // 
+            // dataGridMasini
+            // 
+            this.dataGridMasini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMasini.Location = new System.Drawing.Point(964, 179);
+            this.dataGridMasini.Name = "dataGridMasini";
+            this.dataGridMasini.Size = new System.Drawing.Size(551, 316);
+            this.dataGridMasini.TabIndex = 43;
+            this.dataGridMasini.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMasini_CellContentClick);
+            // 
+            // cmbTip
+            // 
+            this.cmbTip.FormattingEnabled = true;
+            this.cmbTip.Items.AddRange(new object[] {
+            "Motocicleta",
+            "Masina",
+            "Camion"});
+            this.cmbTip.Location = new System.Drawing.Point(64, 238);
+            this.cmbTip.Name = "cmbTip";
+            this.cmbTip.Size = new System.Drawing.Size(121, 21);
+            this.cmbTip.TabIndex = 44;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(414, 54);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(21, 13);
+            this.lblID.TabIndex = 45;
+            this.lblID.Text = "ID:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 588);
+            this.ClientSize = new System.Drawing.Size(1549, 588);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.cmbTip);
+            this.Controls.Add(this.dataGridMasini);
+            this.Controls.Add(this.lstAfisare);
             this.Controls.Add(this.lblMesaj);
             this.Controls.Add(this.gpbOptiuni);
             this.Controls.Add(this.gpbCuloar);
@@ -423,7 +461,6 @@
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.lblCauta);
             this.Controls.Add(this.btnCauta);
-            this.Controls.Add(this.rtbAfisare);
             this.Controls.Add(this.btnAfiseaza);
             this.Controls.Add(this.btnMedie);
             this.Controls.Add(this.txtMarca);
@@ -439,6 +476,7 @@
             this.gpbCuloar.PerformLayout();
             this.gpbOptiuni.ResumeLayout(false);
             this.gpbOptiuni.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,7 +488,6 @@
         private System.Windows.Forms.Button btnModifica;
         private System.Windows.Forms.Label lblCauta;
         private System.Windows.Forms.Button btnCauta;
-        private System.Windows.Forms.RichTextBox rtbAfisare;
         private System.Windows.Forms.Button btnAfiseaza;
         private System.Windows.Forms.Label lblAdauga;
         private System.Windows.Forms.Button btnMedie;
@@ -480,6 +517,10 @@
         private System.Windows.Forms.RadioButton rdbRosu;
         private System.Windows.Forms.RadioButton rdbPortocaliu;
         private System.Windows.Forms.Label lblMesaj;
+        private System.Windows.Forms.ListBox lstAfisare;
+        private System.Windows.Forms.DataGridView dataGridMasini;
+        private System.Windows.Forms.ComboBox cmbTip;
+        private System.Windows.Forms.Label lblID;
     }
 }
 

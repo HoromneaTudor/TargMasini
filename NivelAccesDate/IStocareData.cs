@@ -10,8 +10,10 @@ namespace NivelAccesDate
         void AddMasina(masina s);
         masina[] GetMasina(out int nrMasini);
         void edititare(masina[] v);
-        ArrayList GetMasini();
+       // ArrayList GetMasini();
         masina GetMasina(string nume,string prenume,string model);
         bool UpdateMasina(masina studentActualizat);
+        List<masina> GetMasini();
+        masina GetMasinaByIndex(int index);
     }
 }

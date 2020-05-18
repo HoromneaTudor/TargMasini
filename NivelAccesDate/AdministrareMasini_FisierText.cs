@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.IO;
+using System.Collections.Generic;
 
 namespace NivelAccesDate
 {
@@ -46,9 +47,9 @@ namespace NivelAccesDate
             }
         }
 
-        public ArrayList GetMasini()
+        public List<masina> GetMasini()
         {
-            ArrayList masini = new ArrayList();
+            List<masina> masini = new List<masina>();
 
             try
             {
@@ -143,7 +144,7 @@ namespace NivelAccesDate
 
         public bool UpdateMasina(masina studentActualizat)
         {
-            ArrayList studenti = GetMasini();
+            List<masina> studenti = GetMasini();
             bool actualizareCuSucces = false;
             try
             {
@@ -219,7 +220,36 @@ namespace NivelAccesDate
             }
 
         }
+        public masina GetMasinaByIndex(int index)
+        {
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+                    int contor = 0;
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        masina m = new masina(line);
+                        if (contor == index)
+                            return m;
+                        contor++;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return null;
+        }
 
-       
+        
     }
 }
