@@ -121,6 +121,7 @@ namespace Masina
             var dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
 
             //ordinea de preluare a campurilor este data de ordinea in care au fost scrise in fisier prin apelul implicit al metodei ToString()
+            Optiuni = new List<string>();
             IdMasina = Convert.ToInt32(dateFisier[ID]);
             firma = dateFisier[FIRMA];
             model = dateFisier[MODEL];

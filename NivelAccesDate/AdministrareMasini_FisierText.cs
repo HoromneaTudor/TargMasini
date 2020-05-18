@@ -57,6 +57,7 @@ namespace NivelAccesDate
                 using (StreamReader sr = new StreamReader(NumeFisier))
                 {
                     string line;
+             
 
                     //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                     while ((line = sr.ReadLine()) != null)
@@ -250,6 +251,9 @@ namespace NivelAccesDate
             return null;
         }
 
-        
+        public List<masina> GetMasiniFiltrare(DateTime dt1, DateTime dt2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

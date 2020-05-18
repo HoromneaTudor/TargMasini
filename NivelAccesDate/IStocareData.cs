@@ -1,6 +1,7 @@
 ﻿using Masina;
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 namespace NivelAccesDate
 {
@@ -15,5 +16,6 @@ namespace NivelAccesDate
         bool UpdateMasina(masina studentActualizat);
         List<masina> GetMasini();
         masina GetMasinaByIndex(int index);
+        List<masina> GetMasiniFiltrare(DateTime dt1, DateTime dt2);
     }
 }

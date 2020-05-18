@@ -65,9 +65,15 @@
             this.dataGridMasini = new System.Windows.Forms.DataGridView();
             this.cmbTip = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.filtrareVehiculeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblModifica
@@ -442,11 +448,44 @@
             this.lblID.TabIndex = 45;
             this.lblID.Text = "ID:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 46;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(316, 0);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 47;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.filtrareVehiculeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1549, 24);
+            this.menuStrip1.TabIndex = 48;
+            this.menuStrip1.Text = "FiltrareVehiculeMenuStrip";
+            // 
+            // filtrareVehiculeToolStripMenuItem
+            // 
+            this.filtrareVehiculeToolStripMenuItem.Name = "filtrareVehiculeToolStripMenuItem";
+            this.filtrareVehiculeToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
+            this.filtrareVehiculeToolStripMenuItem.Text = "Filtrare Vehicule";
+            this.filtrareVehiculeToolStripMenuItem.Click += new System.EventHandler(this.filtrareVehiculeToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1549, 588);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.cmbTip);
             this.Controls.Add(this.dataGridMasini);
@@ -474,6 +513,8 @@
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.lblPrenume);
             this.Controls.Add(this.lblNume);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.gpbCuloar.ResumeLayout(false);
@@ -481,6 +522,8 @@
             this.gpbOptiuni.ResumeLayout(false);
             this.gpbOptiuni.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +568,11 @@
         private System.Windows.Forms.DataGridView dataGridMasini;
         private System.Windows.Forms.ComboBox cmbTip;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem filtrareVehiculeToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

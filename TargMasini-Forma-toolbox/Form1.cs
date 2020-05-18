@@ -371,7 +371,14 @@ namespace TargMasini_Forma_toolbox
                 //txtNote.Text = String.Join(" ", s.GetNote());
             }
         }
-        
+
+        private void filtrareVehiculeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<masina> filtrate = adminMasini.GetMasiniFiltrare(dateTimePicker1.Value, dateTimePicker2.Value);
+            dataGridMasini.DataSource=filtrate.Select(m => new { m.IdMasina, m.nume_vanzator, m.prenume_vanzator, m.tip, m.DataActualizare, Optiuni = string.Join(",", m.Optiuni) }).ToList();
+        }
+
+
         //private string getTip(masina m)
         //{
         //    return m.tip;
