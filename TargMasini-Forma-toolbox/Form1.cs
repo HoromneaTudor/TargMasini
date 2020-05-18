@@ -16,7 +16,7 @@ namespace TargMasini_Forma_toolbox
     public partial class Form1 : Form
     {
         IStocareData adminMasini;
-        List<masina> optiuniSelectate = new List<masina>();
+        List<string> optiuniSelectate = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -66,7 +66,8 @@ namespace TargMasini_Forma_toolbox
                 int an = Int32.Parse(txtAn.Text);
                 m.SetAnPret(an,pret);
                 m.Culoare = GetCuloareMasina();
-                m.OptiuniMasina = GetOptiuni();
+                m.Optiuni = new List<string>();
+                m.Optiuni.AddRange(optiuniSelectate);
                 if(cmbTip.Text!="")
                 {
                     m.tip = cmbTip.Text;
@@ -178,7 +179,7 @@ namespace TargMasini_Forma_toolbox
         private void AdaugaMasiniInControlDataGridView(List<masina> masini)
         {
             dataGridMasini.DataSource = null;
-            dataGridMasini.DataSource = masini.Select(m => new { m.IdMasina, m.nume_vanzator, m.prenume_vanzator , m.tip , m.DataActualizare }).ToList();
+            dataGridMasini.DataSource = masini.Select(m => new { m.IdMasina, m.nume_vanzator, m.prenume_vanzator , m.tip , m.DataActualizare , Optiuni=string.Join(",",m.Optiuni)}).ToList();
             
         }
 
@@ -254,21 +255,35 @@ namespace TargMasini_Forma_toolbox
         //        optiuniSelectate.Add(optiuneSelectata);
         //    else
         //        optiuniSelectate.Remove(optiuneSelectata);
-                
+
         //}
 
-        private Optiuni GetOptiuni()    //modificat
+        //private Optiuni GetOptiuni()    //modificat
+        //{
+        //    int i = 0;
+        //    if (ckbAerConditionat.Checked)
+        //        i++;                    //i=i | optiuni.aerconditionat ideie
+        //    if (ckbScaunePiele.Checked)
+        //        i += 2;
+        //    if (ckbABS.Checked)
+        //        i += 4;
+        //    if (ckbLuminiCeata.Checked)
+        //        i += 8;
+        //    return (Optiuni)i;
+        //}
+        private void ckbOptiuni_CheckedChanged(object sender, EventArgs e)
         {
-            int i = 0;
-            if (ckbAerConditionat.Checked)
-                i++;                    //i=i | optiuni.aerconditionat ideie
-            if (ckbScaunePiele.Checked)
-                i += 2;
-            if (ckbABS.Checked)
-                i += 4;
-            if (ckbLuminiCeata.Checked)
-                i += 8;
-            return (Optiuni)i;
+            CheckBox checkBoxControl = sender as CheckBox; //operator 'as'
+            //sau
+            //CheckBox checkBoxControl = (CheckBox)sender;  //operator cast
+
+            string disciplinaSelectata = checkBoxControl.Text;
+
+            //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
+            if (checkBoxControl.Checked == true)
+                optiuniSelectate.Add(disciplinaSelectata);
+            else
+                optiuniSelectate.Remove(disciplinaSelectata);
         }
 
         private void ResetareControale()
@@ -346,7 +361,7 @@ namespace TargMasini_Forma_toolbox
                     if (optiune is CheckBox)
                     {
                         var optiuneBox = optiune as CheckBox;
-                        foreach (var dis in m.OptiuniMasina.ToString())
+                        foreach (string dis in m.Optiuni)
                             if (optiuneBox.Text.Equals(dis))
                                 optiuneBox.Checked = true;
                     }

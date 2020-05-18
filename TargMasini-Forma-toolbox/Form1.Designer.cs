@@ -347,6 +347,7 @@
             this.ckbLuminiCeata.TabIndex = 3;
             this.ckbLuminiCeata.Text = "LuminiDeCeata";
             this.ckbLuminiCeata.UseVisualStyleBackColor = true;
+            this.ckbLuminiCeata.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // ckbABS
             // 
@@ -357,6 +358,7 @@
             this.ckbABS.TabIndex = 2;
             this.ckbABS.Text = "ABS";
             this.ckbABS.UseVisualStyleBackColor = true;
+            this.ckbABS.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // ckbScaunePiele
             // 
@@ -367,6 +369,7 @@
             this.ckbScaunePiele.TabIndex = 1;
             this.ckbScaunePiele.Text = "ScaunePiele";
             this.ckbScaunePiele.UseVisualStyleBackColor = true;
+            this.ckbScaunePiele.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // ckbAerConditionat
             // 
@@ -377,6 +380,7 @@
             this.ckbAerConditionat.TabIndex = 0;
             this.ckbAerConditionat.Text = "AerConditionat";
             this.ckbAerConditionat.UseVisualStyleBackColor = true;
+            this.ckbAerConditionat.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // gpbOptiuni
             // 

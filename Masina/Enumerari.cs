@@ -26,15 +26,15 @@ namespace Masina
         Portocaliu = 5,
         Inexistenta = 6,
     };
-    [Flags]
-    public enum Optiuni : short
-    {
-        None = 0,
-        AerConditionat = 1,
-        ScauneDePiele = 2,
-        ABS = 4,
-        LuminiDeCeata = 8,
-    };
+    //[Flags]
+    //public enum Optiuni : short
+    //{
+    //    None = 0,
+    //    AerConditionat = 1,
+    //    ScauneDePiele = 2,
+    //    ABS = 4,
+    //    LuminiDeCeata = 8,
+    //};
     //public enum Tip
     //{
     //    Motocicleta=0,

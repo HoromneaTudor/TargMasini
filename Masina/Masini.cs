@@ -23,6 +23,7 @@ namespace Masina
         private const bool SUCCES = true;
         private const string SEPARATOR_AFISARE = " ";
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
+        private const char SEPARATOR_SECUNDAR_FISIER = ' ';
 
         //private int n;
 
@@ -41,7 +42,8 @@ namespace Masina
         private const int TIP = 9;
         //private const int DATAACTUALIZARE = 10;
 
-        public Optiuni OptiuniMasina { get; set; }
+        //public Optiuni OptiuniMasina { get; set; }
+        public List<string> Optiuni { get; set; }
         public CuloareMasina Culoare { get; set; }
 
         public static int IdUltimaMasina { get; set; } = 0;
@@ -54,6 +56,22 @@ namespace Masina
         public string tip { get; set; }
         public DateTime DataActualizare { get; set; }
 
+        public string OptiuniAsString
+        {
+            get
+            {
+                string sOptiuni = string.Empty;
+                foreach(string optiune in Optiuni)
+                {
+                    if(sOptiuni != string.Empty)
+                    {
+                        sOptiuni += SEPARATOR_SECUNDAR_FISIER;
+                    }
+                    sOptiuni += optiune;
+                }
+                return sOptiuni;
+            }
+        }
         public int Vechime
         {
             get
@@ -71,7 +89,7 @@ namespace Masina
             an = 0;
             pret = 0;
             Culoare = 0;
-            OptiuniMasina = 0;
+            //OptiuniMasina = 0;
             tip = "necunoscut";
         }
         public masina(string numev, string prenumev, string firmaa, string modell)
@@ -83,7 +101,7 @@ namespace Masina
             IdUltimaMasina++;
             IdMasina = IdUltimaMasina;
             Culoare = 0;
-            OptiuniMasina = 0;
+            //OptiuniMasina = 0;
             tip = "necunoscut";
 
         }
@@ -113,7 +131,7 @@ namespace Masina
             string pretbuf = dateFisier[PRET];
             pret = Int32.Parse(pretbuf);
             Culoare = (CuloareMasina)Enum.Parse(typeof(CuloareMasina), dateFisier[CULOARE]);
-            OptiuniMasina = (Optiuni)Enum.Parse(typeof(Optiuni), dateFisier[OPTIUNI]);
+            Optiuni.AddRange(dateFisier[OPTIUNI].Split(SEPARATOR_SECUNDAR_FISIER));
             tip = dateFisier[TIP];
             //DataActualizare = (DateTime) dateFisier[DATAACTUALIZARE];
             IdUltimaMasina = IdMasina;
@@ -146,7 +164,7 @@ namespace Masina
             string sAnPret = "Nu exista(Nu ati apelat metoda SetAnPret";
             if (an != 0 && pret != 0)
             {
-                sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret, Culoare.ToString(), OptiuniMasina);
+                sAnPret = string.Format("anul {0} si are pretul de {1} Euro ,culoarea {2} , cu optiunile {3}", an, pret, Culoare.ToString(), OptiuniAsString);
             }
             string s = string.Format("ID-ul Masina: {3}\nMarca: {0} \nmodelul {1} \nEste din {2}  \nNume vanzator: {4} {5}\nTip vehicul: {6}/nData Adaugare/Actualizare:{7}", firma, model, sAnPret,IdMasina,nume_vanzator,prenume_vanzator,tip,DataActualizare);
 
@@ -155,7 +173,7 @@ namespace Masina
         public string ConversieLaSir_PentruFisier()
         {
             string s = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}{0}{8}{0}{9}{0}{10}{0}{11}",
-                SEPARATOR_PRINCIPAL_FISIER, IdMasina.ToString(), (firma ?? " NECUNOSCUT "), (model ?? " NECUNOSCUT "), (nume_vanzator  ?? " NECUNOSCUT "), (prenume_vanzator ?? " NECUNOSCUT ") ,an, pret,Culoare,OptiuniMasina,tip,DataActualizare);
+                SEPARATOR_PRINCIPAL_FISIER, IdMasina.ToString(), (firma ?? " NECUNOSCUT "), (model ?? " NECUNOSCUT "), (nume_vanzator  ?? " NECUNOSCUT "), (prenume_vanzator ?? " NECUNOSCUT ") ,an, pret,Culoare,OptiuniAsString,tip,DataActualizare);
 
             return s;
         }
