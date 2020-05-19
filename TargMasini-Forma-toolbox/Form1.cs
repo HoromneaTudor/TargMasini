@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using NivelAccesDate;
 using Masina;
 using System.Collections;
+using System.IO;
 
 namespace TargMasini_Forma_toolbox
 {
@@ -21,7 +22,7 @@ namespace TargMasini_Forma_toolbox
         {
             InitializeComponent();
             adminMasini = StocareFactory.GetAdministratorStocare();
-            this.Width = 400;
+            this.Width = 440;
         
         }
 
@@ -376,6 +377,46 @@ namespace TargMasini_Forma_toolbox
         {
             List<masina> filtrate = adminMasini.GetMasiniFiltrare(dateTimePicker1.Value, dateTimePicker2.Value);
             dataGridMasini.DataSource=filtrate.Select(m => new { m.IdMasina, m.nume_vanzator, m.prenume_vanzator, m.tip, m.DataActualizare, Optiuni = string.Join(",", m.Optiuni) }).ToList();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salvareMasiniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<masina> masini = adminMasini.GetMasiniFiltrare(dateTimePicker1.Value, dateTimePicker2.Value);
+            sfd.ShowDialog();
+            salvareFiltrare(masini,sfd.FileName);
+        }
+        public void salvareFiltrare(List<masina>masini,string numeFisier)
+        {
+            try
+            {
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'true' al constructorului StreamWriter indica modul 'append' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
+                {
+                    foreach (masina m in masini)
+                    {
+                        swFisierText.WriteLine(m.ConversieLaSir());
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
 

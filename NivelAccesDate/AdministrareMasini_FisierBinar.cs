@@ -229,7 +229,7 @@ namespace NivelAccesDate
             List<masina> filtrate = new List<masina>();
             foreach(masina m in masini)
             {
-                if (dt1 < m.DataActualizare && dt2 > m.DataActualizare)
+                if (dt1 <= m.DataActualizare && dt2 >= m.DataActualizare)
                 { 
                     filtrate.Add(m); 
                 }

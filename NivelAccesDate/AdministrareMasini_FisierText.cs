@@ -253,7 +253,16 @@ namespace NivelAccesDate
 
         public List<masina> GetMasiniFiltrare(DateTime dt1, DateTime dt2)
         {
-            throw new NotImplementedException();
+            List<masina> masini = GetMasini();
+            List<masina> filtrate = new List<masina>();
+            foreach (masina m in masini)
+            {
+                if (dt1 <= m.DataActualizare && dt2 >= m.DataActualizare)
+                {
+                    filtrate.Add(m);
+                }
+            }
+            return filtrate;
         }
     }
 }

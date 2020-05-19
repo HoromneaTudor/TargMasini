@@ -69,7 +69,9 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filtrareVehiculeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvareMasiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
@@ -412,7 +414,7 @@
             // lstAfisare
             // 
             this.lstAfisare.FormattingEnabled = true;
-            this.lstAfisare.Location = new System.Drawing.Point(414, 179);
+            this.lstAfisare.Location = new System.Drawing.Point(448, 179);
             this.lstAfisare.Name = "lstAfisare";
             this.lstAfisare.Size = new System.Drawing.Size(544, 316);
             this.lstAfisare.TabIndex = 42;
@@ -421,7 +423,7 @@
             // dataGridMasini
             // 
             this.dataGridMasini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridMasini.Location = new System.Drawing.Point(964, 179);
+            this.dataGridMasini.Location = new System.Drawing.Point(998, 179);
             this.dataGridMasini.Name = "dataGridMasini";
             this.dataGridMasini.Size = new System.Drawing.Size(551, 316);
             this.dataGridMasini.TabIndex = 43;
@@ -442,7 +444,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(414, 54);
+            this.lblID.Location = new System.Drawing.Point(445, 51);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 13);
             this.lblID.TabIndex = 45;
@@ -450,14 +452,15 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 0);
+            this.dateTimePicker1.Location = new System.Drawing.Point(209, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 46;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(316, 0);
+            this.dateTimePicker2.Location = new System.Drawing.Point(209, 26);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 47;
@@ -465,7 +468,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.filtrareVehiculeToolStripMenuItem});
+            this.filtrareVehiculeToolStripMenuItem,
+            this.salvareMasiniToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1549, 24);
@@ -479,10 +483,18 @@
             this.filtrareVehiculeToolStripMenuItem.Text = "Filtrare Vehicule";
             this.filtrareVehiculeToolStripMenuItem.Click += new System.EventHandler(this.filtrareVehiculeToolStripMenuItem_Click);
             // 
+            // salvareMasiniToolStripMenuItem
+            // 
+            this.salvareMasiniToolStripMenuItem.Name = "salvareMasiniToolStripMenuItem";
+            this.salvareMasiniToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.salvareMasiniToolStripMenuItem.Text = "Salvare Masini";
+            this.salvareMasiniToolStripMenuItem.Click += new System.EventHandler(this.salvareMasiniToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1549, 588);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -517,6 +529,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gpbCuloar.ResumeLayout(false);
             this.gpbCuloar.PerformLayout();
             this.gpbOptiuni.ResumeLayout(false);
@@ -573,6 +586,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem filtrareVehiculeToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ToolStripMenuItem salvareMasiniToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog sfd;
     }
 }
 
