@@ -72,6 +72,7 @@
             this.salvareMasiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.btnInapoi = new System.Windows.Forms.Button();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
@@ -490,12 +491,23 @@
             this.salvareMasiniToolStripMenuItem.Text = "Salvare Masini";
             this.salvareMasiniToolStripMenuItem.Click += new System.EventHandler(this.salvareMasiniToolStripMenuItem_Click);
             // 
+            // btnInapoi
+            // 
+            this.btnInapoi.Location = new System.Drawing.Point(64, 552);
+            this.btnInapoi.Name = "btnInapoi";
+            this.btnInapoi.Size = new System.Drawing.Size(75, 23);
+            this.btnInapoi.TabIndex = 49;
+            this.btnInapoi.Text = "Inapoi";
+            this.btnInapoi.UseVisualStyleBackColor = true;
+            this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1549, 588);
+            this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblID);
@@ -588,6 +600,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem salvareMasiniToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfd;
+        private System.Windows.Forms.Button btnInapoi;
     }
 }
 

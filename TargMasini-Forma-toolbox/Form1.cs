@@ -25,6 +25,7 @@ namespace TargMasini_Forma_toolbox
             this.Width = 440;
         
         }
+        public Form ReftoMenu { get; set; }
 
         private void btnAdauga_Click(object sender, EventArgs e)
         {
@@ -417,6 +418,13 @@ namespace TargMasini_Forma_toolbox
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInapoi_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.ReftoMenu.Show();
+            
         }
 
 
