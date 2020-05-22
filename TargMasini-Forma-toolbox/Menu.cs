@@ -36,5 +36,13 @@ namespace TargMasini_Forma_toolbox
         {
             this.Close();
         }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            InfoAutor infa = new InfoAutor();
+            infa.ReftoMenu = this;
+            this.Hide();
+            infa.Show();
+        }
     }
 }

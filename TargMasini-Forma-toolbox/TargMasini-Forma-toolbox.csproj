@@ -59,6 +59,12 @@
     <Compile Include="FormaEditare.Designer.cs">
       <DependentUpon>FormaEditare.cs</DependentUpon>
     </Compile>
+    <Compile Include="InfoAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoAutor.Designer.cs">
+      <DependentUpon>InfoAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +80,20 @@
     <Compile Include="VerificareParola.Designer.cs">
       <DependentUpon>VerificareParola.cs</DependentUpon>
     </Compile>
+    <Compile Include="VizualizareOferte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VizualizareOferte.Designer.cs">
+      <DependentUpon>VizualizareOferte.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormaEditare.resx">
       <DependentUpon>FormaEditare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoAutor.resx">
+      <DependentUpon>InfoAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
