@@ -506,6 +506,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.Untitlesadd___Copy;
             this.ClientSize = new System.Drawing.Size(1549, 588);
             this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.dateTimePicker2);

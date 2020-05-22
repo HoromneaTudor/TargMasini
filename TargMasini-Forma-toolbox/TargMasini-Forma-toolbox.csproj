@@ -106,6 +106,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VerificareParola.resx">
       <DependentUpon>VerificareParola.cs</DependentUpon>
@@ -132,6 +133,30 @@
       <Project>{7673d5bf-61a0-45a9-94d4-7c9a67de9346}</Project>
       <Name>NivelAccesDate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200px-Renault_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a2699c2704acf7306c5af87ddea663bd.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Renault-logo-design-Passion-for-life.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saasdas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saasdas1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitlesadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitlesadd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitlesadd - Copy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

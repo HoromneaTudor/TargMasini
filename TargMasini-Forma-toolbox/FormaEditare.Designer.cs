@@ -55,6 +55,7 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblPrenume = new System.Windows.Forms.Label();
             this.lblNume = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gpbOptiuni.SuspendLayout();
             this.gpbCuloar.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +70,7 @@
             // 
             // btnModifica
             // 
-            this.btnModifica.Location = new System.Drawing.Point(96, 348);
+            this.btnModifica.Location = new System.Drawing.Point(96, 407);
             this.btnModifica.Name = "btnModifica";
             this.btnModifica.Size = new System.Drawing.Size(75, 23);
             this.btnModifica.TabIndex = 1;
@@ -84,7 +85,7 @@
             "Motocicleta",
             "Masina",
             "Camion"});
-            this.cmbTip.Location = new System.Drawing.Point(325, 138);
+            this.cmbTip.Location = new System.Drawing.Point(152, 127);
             this.cmbTip.Name = "cmbTip";
             this.cmbTip.Size = new System.Drawing.Size(121, 21);
             this.cmbTip.TabIndex = 47;
@@ -95,7 +96,7 @@
             this.gpbOptiuni.Controls.Add(this.ckbAerConditionat);
             this.gpbOptiuni.Controls.Add(this.ckbScaunePiele);
             this.gpbOptiuni.Controls.Add(this.ckbLuminiCeata);
-            this.gpbOptiuni.Location = new System.Drawing.Point(325, 271);
+            this.gpbOptiuni.Location = new System.Drawing.Point(394, 127);
             this.gpbOptiuni.Name = "gpbOptiuni";
             this.gpbOptiuni.Size = new System.Drawing.Size(244, 100);
             this.gpbOptiuni.TabIndex = 46;
@@ -154,7 +155,7 @@
             this.gpbCuloar.Controls.Add(this.lblAdauga);
             this.gpbCuloar.Controls.Add(this.rdbRosu);
             this.gpbCuloar.Controls.Add(this.rdbAlbastru);
-            this.gpbCuloar.Location = new System.Drawing.Point(325, 165);
+            this.gpbCuloar.Location = new System.Drawing.Point(394, 22);
             this.gpbCuloar.Name = "gpbCuloar";
             this.gpbCuloar.Size = new System.Drawing.Size(244, 100);
             this.gpbCuloar.TabIndex = 45;
@@ -227,7 +228,7 @@
             // 
             // txtPret
             // 
-            this.txtPret.Location = new System.Drawing.Point(467, 91);
+            this.txtPret.Location = new System.Drawing.Point(294, 80);
             this.txtPret.Margin = new System.Windows.Forms.Padding(2);
             this.txtPret.Name = "txtPret";
             this.txtPret.Size = new System.Drawing.Size(76, 20);
@@ -235,7 +236,7 @@
             // 
             // txtAn
             // 
-            this.txtAn.Location = new System.Drawing.Point(467, 57);
+            this.txtAn.Location = new System.Drawing.Point(294, 46);
             this.txtAn.Margin = new System.Windows.Forms.Padding(2);
             this.txtAn.Name = "txtAn";
             this.txtAn.Size = new System.Drawing.Size(76, 20);
@@ -243,7 +244,7 @@
             // 
             // txtModel
             // 
-            this.txtModel.Location = new System.Drawing.Point(467, 29);
+            this.txtModel.Location = new System.Drawing.Point(294, 18);
             this.txtModel.Margin = new System.Windows.Forms.Padding(2);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(76, 20);
@@ -252,7 +253,7 @@
             // lblPret
             // 
             this.lblPret.AutoSize = true;
-            this.lblPret.Location = new System.Drawing.Point(404, 91);
+            this.lblPret.Location = new System.Drawing.Point(231, 80);
             this.lblPret.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPret.Name = "lblPret";
             this.lblPret.Size = new System.Drawing.Size(26, 13);
@@ -262,7 +263,7 @@
             // lblAn
             // 
             this.lblAn.AutoSize = true;
-            this.lblAn.Location = new System.Drawing.Point(404, 62);
+            this.lblAn.Location = new System.Drawing.Point(231, 51);
             this.lblAn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAn.Name = "lblAn";
             this.lblAn.Size = new System.Drawing.Size(20, 13);
@@ -272,7 +273,7 @@
             // lblModel
             // 
             this.lblModel.AutoSize = true;
-            this.lblModel.Location = new System.Drawing.Point(404, 33);
+            this.lblModel.Location = new System.Drawing.Point(231, 22);
             this.lblModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(36, 13);
@@ -281,7 +282,7 @@
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(296, 91);
+            this.txtMarca.Location = new System.Drawing.Point(123, 80);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(76, 20);
@@ -289,7 +290,7 @@
             // 
             // txtPrenume
             // 
-            this.txtPrenume.Location = new System.Drawing.Point(296, 57);
+            this.txtPrenume.Location = new System.Drawing.Point(123, 46);
             this.txtPrenume.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrenume.Name = "txtPrenume";
             this.txtPrenume.Size = new System.Drawing.Size(76, 20);
@@ -297,7 +298,7 @@
             // 
             // txtNume1
             // 
-            this.txtNume1.Location = new System.Drawing.Point(296, 29);
+            this.txtNume1.Location = new System.Drawing.Point(123, 18);
             this.txtNume1.Margin = new System.Windows.Forms.Padding(2);
             this.txtNume1.Name = "txtNume1";
             this.txtNume1.Size = new System.Drawing.Size(76, 20);
@@ -306,7 +307,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(233, 91);
+            this.lblMarca.Location = new System.Drawing.Point(60, 80);
             this.lblMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
@@ -316,7 +317,7 @@
             // lblPrenume
             // 
             this.lblPrenume.AutoSize = true;
-            this.lblPrenume.Location = new System.Drawing.Point(233, 62);
+            this.lblPrenume.Location = new System.Drawing.Point(60, 51);
             this.lblPrenume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenume.Name = "lblPrenume";
             this.lblPrenume.Size = new System.Drawing.Size(49, 13);
@@ -326,19 +327,30 @@
             // lblNume
             // 
             this.lblNume.AutoSize = true;
-            this.lblNume.Location = new System.Drawing.Point(233, 33);
+            this.lblNume.Location = new System.Drawing.Point(60, 22);
             this.lblNume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNume.Name = "lblNume";
             this.lblNume.Size = new System.Drawing.Size(35, 13);
             this.lblNume.TabIndex = 48;
             this.lblNume.Text = "Nume";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 60;
+            this.label1.Text = "label1";
+            // 
             // FormaEditare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.saasdas;
+            this.ClientSize = new System.Drawing.Size(800, 516);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.txtAn);
             this.Controls.Add(this.txtModel);
@@ -397,5 +409,6 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblPrenume;
         private System.Windows.Forms.Label lblNume;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -42,7 +42,7 @@
             // 
             // btnInapoi
             // 
-            this.btnInapoi.Location = new System.Drawing.Point(72, 148);
+            this.btnInapoi.Location = new System.Drawing.Point(54, 128);
             this.btnInapoi.Name = "btnInapoi";
             this.btnInapoi.Size = new System.Drawing.Size(75, 23);
             this.btnInapoi.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 227);
+            this.ClientSize = new System.Drawing.Size(371, 175);
             this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.lblInfo);
             this.Name = "InfoAutor";
