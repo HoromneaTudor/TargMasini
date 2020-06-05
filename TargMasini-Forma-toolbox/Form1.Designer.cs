@@ -1,4 +1,5 @@
-﻿namespace TargMasini_Forma_toolbox
+﻿//Horomnea Tudor Grupa 3122A
+namespace TargMasini_Forma_toolbox
 {
     partial class Form1
     {
@@ -542,7 +543,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.gpbCuloar.ResumeLayout(false);
             this.gpbCuloar.PerformLayout();
             this.gpbOptiuni.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Horomnea Tudor Grupa 3122A
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,7 @@ namespace TargMasini_Forma_toolbox
             VerificareParola verpas = new VerificareParola();
             verpas.ReftoMenu = this;
             //frm1.ReftoMenu = verpas.ReftoMenu;
-            this.Hide();
+            //this.Hide();
             verpas.Show();
             
         }

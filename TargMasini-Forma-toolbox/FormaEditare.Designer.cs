@@ -1,4 +1,5 @@
-﻿namespace TargMasini_Forma_toolbox
+﻿//Horomnea Tudor Grupa 3122A
+namespace TargMasini_Forma_toolbox
 {
     partial class FormaEditare
     {
@@ -370,6 +371,7 @@
             this.Controls.Add(this.lblAfisare);
             this.Name = "FormaEditare";
             this.Text = "FormaEditare";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormaEditare_FormClosing);
             this.Load += new System.EventHandler(this.FormaEditare_Load);
             this.gpbOptiuni.ResumeLayout(false);
             this.gpbOptiuni.PerformLayout();

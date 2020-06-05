@@ -1,4 +1,5 @@
-﻿namespace TargMasini_Forma_toolbox
+﻿//Horomnea Tudor Grupa 3122A
+namespace TargMasini_Forma_toolbox
 {
     partial class InfoAutor
     {
@@ -59,6 +60,7 @@
             this.Controls.Add(this.lblInfo);
             this.Name = "InfoAutor";
             this.Text = "InfoAutor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InfoAutor_FormClosing);
             this.Load += new System.EventHandler(this.InfoAutor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

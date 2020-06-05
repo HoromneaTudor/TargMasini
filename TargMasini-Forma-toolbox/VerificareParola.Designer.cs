@@ -1,4 +1,5 @@
-﻿namespace TargMasini_Forma_toolbox
+﻿//Horomnea Tudor Grupa 3122A
+namespace TargMasini_Forma_toolbox
 {
     partial class VerificareParola
     {
@@ -93,6 +94,7 @@
             this.Controls.Add(this.txtParola);
             this.Name = "VerificareParola";
             this.Text = "VerificareParola";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerificareParola_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

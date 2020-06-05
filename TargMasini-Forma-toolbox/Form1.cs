@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Horomnea Tudor Grupa 3122A
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,6 +83,7 @@ namespace TargMasini_Forma_toolbox
         }
         private CodEroare Validare(string nume,string prenume,string marca,string model,string an,string pret)
         {
+            int ign;
             if (nume == string.Empty)
                 return CodEroare.NUME_INCORECT;
             if (prenume == string.Empty)
@@ -91,9 +93,18 @@ namespace TargMasini_Forma_toolbox
             if (model == string.Empty)
                 return CodEroare.MODEL_INCORECT;
             if (an == string.Empty)
-                return CodEroare.AN_INCORECT;
+                return CodEroare.AN_INCORECT; 
             if (pret == string.Empty)
+               return CodEroare.PRET_INCORECT;
+            bool succes = false;
+            succes = Int32.TryParse(an, out ign);
+            if (succes == false)
+                return CodEroare.AN_INCORECT;
+            succes = false;
+            succes = Int32.TryParse(pret, out ign);
+            if (succes == false)
                 return CodEroare.PRET_INCORECT;
+
             return CodEroare.CORECT;
         }
 
@@ -235,6 +246,7 @@ namespace TargMasini_Forma_toolbox
                 //adminMasini.UpdateMasina(m);
                 using (FormaEditare formEdit = new FormaEditare(m)) 
                 {
+                    //formEdit.ReftoForm1 = this;
                     var dr = formEdit.ShowDialog(this);
                     if(dr==DialogResult.OK)
                     {
@@ -415,10 +427,7 @@ namespace TargMasini_Forma_toolbox
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnInapoi_Click(object sender, EventArgs e)
         {
@@ -426,6 +435,13 @@ namespace TargMasini_Forma_toolbox
             this.ReftoMenu.Show();
             
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.ReftoMenu.Show();
+        }
+
+
 
 
         //private string getTip(masina m)

@@ -1,4 +1,5 @@
-﻿namespace TargMasini_Forma_toolbox
+﻿//Horomnea Tudor Grupa 3122A
+namespace TargMasini_Forma_toolbox
 {
     partial class Menu
     {

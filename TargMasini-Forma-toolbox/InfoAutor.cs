@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Horomnea Tudor Grupa 3122A
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,11 @@ namespace TargMasini_Forma_toolbox
         private void btnInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
+            this.ReftoMenu.Show();
+        }
+
+        private void InfoAutor_FormClosing(object sender, FormClosingEventArgs e)
+        {
             this.ReftoMenu.Show();
         }
     }

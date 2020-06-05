@@ -1,4 +1,5 @@
-﻿using Masina;
+﻿//Horomnea Tudor Grupa 3122A
+using Masina;
 using System.Collections.Generic;
 using System.Collections;
 using System;

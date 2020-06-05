@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Horomnea Tudor Grupa 3122A
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace TargMasini_Forma_toolbox
             InitializeComponent();
             adminMasini = StocareFactory.GetAdministratorStocare();
         }
+        public Form ReftoForm1 { get; set; }
         public FormaEditare(masina mas):this()
         {
             masinaForma1 = mas;
@@ -129,6 +131,11 @@ namespace TargMasini_Forma_toolbox
                 optiuniSelectate.Add(disciplinaSelectata);
             else
                 optiuniSelectate.Remove(disciplinaSelectata);
+        }
+
+        private void FormaEditare_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.ReftoForm1.Show();
         }
     }
 }
