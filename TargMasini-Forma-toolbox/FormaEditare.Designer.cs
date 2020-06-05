@@ -29,7 +29,6 @@ namespace TargMasini_Forma_toolbox
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAfisare = new System.Windows.Forms.Label();
             this.btnModifica = new System.Windows.Forms.Button();
             this.cmbTip = new System.Windows.Forms.ComboBox();
             this.gpbOptiuni = new System.Windows.Forms.GroupBox();
@@ -56,18 +55,10 @@ namespace TargMasini_Forma_toolbox
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblPrenume = new System.Windows.Forms.Label();
             this.lblNume = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTip = new System.Windows.Forms.Label();
             this.gpbOptiuni.SuspendLayout();
             this.gpbCuloar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblAfisare
-            // 
-            this.lblAfisare.AutoSize = true;
-            this.lblAfisare.Location = new System.Drawing.Point(93, 65);
-            this.lblAfisare.Name = "lblAfisare";
-            this.lblAfisare.Size = new System.Drawing.Size(0, 13);
-            this.lblAfisare.TabIndex = 0;
             // 
             // btnModifica
             // 
@@ -291,7 +282,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // txtPrenume
             // 
-            this.txtPrenume.Location = new System.Drawing.Point(123, 46);
+            this.txtPrenume.Location = new System.Drawing.Point(123, 50);
             this.txtPrenume.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrenume.Name = "txtPrenume";
             this.txtPrenume.Size = new System.Drawing.Size(76, 20);
@@ -318,7 +309,7 @@ namespace TargMasini_Forma_toolbox
             // lblPrenume
             // 
             this.lblPrenume.AutoSize = true;
-            this.lblPrenume.Location = new System.Drawing.Point(60, 51);
+            this.lblPrenume.Location = new System.Drawing.Point(60, 53);
             this.lblPrenume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenume.Name = "lblPrenume";
             this.lblPrenume.Size = new System.Drawing.Size(49, 13);
@@ -335,14 +326,14 @@ namespace TargMasini_Forma_toolbox
             this.lblNume.TabIndex = 48;
             this.lblNume.Text = "Nume";
             // 
-            // label1
+            // lblTip
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 127);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "label1";
+            this.lblTip.AutoSize = true;
+            this.lblTip.Location = new System.Drawing.Point(120, 127);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(22, 13);
+            this.lblTip.TabIndex = 60;
+            this.lblTip.Text = "Tip";
             // 
             // FormaEditare
             // 
@@ -351,7 +342,7 @@ namespace TargMasini_Forma_toolbox
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.saasdas;
             this.ClientSize = new System.Drawing.Size(800, 516);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTip);
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.txtAn);
             this.Controls.Add(this.txtModel);
@@ -368,7 +359,6 @@ namespace TargMasini_Forma_toolbox
             this.Controls.Add(this.gpbOptiuni);
             this.Controls.Add(this.gpbCuloar);
             this.Controls.Add(this.btnModifica);
-            this.Controls.Add(this.lblAfisare);
             this.Name = "FormaEditare";
             this.Text = "FormaEditare";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormaEditare_FormClosing);
@@ -383,8 +373,6 @@ namespace TargMasini_Forma_toolbox
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblAfisare;
         private System.Windows.Forms.Button btnModifica;
         private System.Windows.Forms.ComboBox cmbTip;
         private System.Windows.Forms.GroupBox gpbOptiuni;
@@ -411,6 +399,6 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblPrenume;
         private System.Windows.Forms.Label lblNume;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTip;
     }
 }

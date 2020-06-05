@@ -74,6 +74,7 @@ namespace TargMasini_Forma_toolbox
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.btnInapoi = new System.Windows.Forms.Button();
+            this.lblTip = new System.Windows.Forms.Label();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
@@ -102,7 +103,7 @@ namespace TargMasini_Forma_toolbox
             // lblCauta
             // 
             this.lblCauta.AutoSize = true;
-            this.lblCauta.Location = new System.Drawing.Point(397, 43);
+            this.lblCauta.Location = new System.Drawing.Point(409, 76);
             this.lblCauta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCauta.Name = "lblCauta";
             this.lblCauta.Size = new System.Drawing.Size(0, 13);
@@ -198,7 +199,7 @@ namespace TargMasini_Forma_toolbox
             // lblPrenume
             // 
             this.lblPrenume.AutoSize = true;
-            this.lblPrenume.Location = new System.Drawing.Point(61, 81);
+            this.lblPrenume.Location = new System.Drawing.Point(61, 79);
             this.lblPrenume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenume.Name = "lblPrenume";
             this.lblPrenume.Size = new System.Drawing.Size(49, 13);
@@ -502,6 +503,15 @@ namespace TargMasini_Forma_toolbox
             this.btnInapoi.UseVisualStyleBackColor = true;
             this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
             // 
+            // lblTip
+            // 
+            this.lblTip.AutoSize = true;
+            this.lblTip.Location = new System.Drawing.Point(26, 241);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(22, 13);
+            this.lblTip.TabIndex = 50;
+            this.lblTip.Text = "Tip";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -509,6 +519,7 @@ namespace TargMasini_Forma_toolbox
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.Untitlesadd___Copy;
             this.ClientSize = new System.Drawing.Size(1549, 588);
+            this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -603,6 +614,7 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.ToolStripMenuItem salvareMasiniToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfd;
         private System.Windows.Forms.Button btnInapoi;
+        private System.Windows.Forms.Label lblTip;
     }
 }
 

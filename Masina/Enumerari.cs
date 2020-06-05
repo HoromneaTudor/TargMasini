@@ -15,7 +15,8 @@ namespace Masina
         MARCA_INCORECT=3,
         MODEL_INCORECT=4,
         AN_INCORECT=5,
-        PRET_INCORECT=6
+        PRET_INCORECT=6,
+        TIP_INCORECT=7
 
     }
     public enum CuloareMasina

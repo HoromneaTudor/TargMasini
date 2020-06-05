@@ -37,8 +37,9 @@ namespace TargMasini_Forma_toolbox
             lblAn.ForeColor = Color.Black;
             lblPret.ForeColor = Color.Black;
             lblModel.ForeColor = Color.Black;
+            lblTip.ForeColor = Color.Black;
             CodEroare validarea = Validare(txtNume.Text, txtPrenume.Text, txtMarca.Text, txtMarca.Text, txtAn.Text, txtPret.Text);
-            if(validarea!=CodEroare.CORECT)
+            if (validarea!=CodEroare.CORECT)
             {
                 switch(validarea)
                 {
@@ -59,6 +60,9 @@ namespace TargMasini_Forma_toolbox
                     break;
                     case CodEroare.PRET_INCORECT:
                         lblPret.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.TIP_INCORECT:
+                        lblTip.ForeColor = Color.Red;
                     break;
                 }
             }
@@ -78,6 +82,7 @@ namespace TargMasini_Forma_toolbox
                 m.DataActualizare = DateTime.Now;
                 adminMasini.AddMasina(m);
                 lblAdauga.Text = "Masina a fost adaugata cu succes";
+                ResetareControale();
             }
 
         }
@@ -104,6 +109,8 @@ namespace TargMasini_Forma_toolbox
             succes = Int32.TryParse(pret, out ign);
             if (succes == false)
                 return CodEroare.PRET_INCORECT;
+            if (cmbTip.Text == string.Empty)
+                return CodEroare.TIP_INCORECT;
 
             return CodEroare.CORECT;
         }
@@ -111,12 +118,14 @@ namespace TargMasini_Forma_toolbox
         private void btnMedie_Click(object sender, EventArgs e)
         {
             masina m;
+            //ResetareControale();
             lblMarca.ForeColor = Color.Black;
             lblNume.ForeColor = Color.Black;
             lblPrenume.ForeColor = Color.Black;
             lblAn.ForeColor = Color.Black;
             lblPret.ForeColor = Color.Black;
             lblModel.ForeColor = Color.Black;
+            lblTip.ForeColor = Color.Black;
             CodEroare validarea = Validare(txtNume.Text, txtPrenume.Text, txtMarca.Text, txtMarca.Text, txtAn.Text, txtPret.Text);
             if (validarea != CodEroare.CORECT)
             {
@@ -139,6 +148,9 @@ namespace TargMasini_Forma_toolbox
                         break;
                     case CodEroare.PRET_INCORECT:
                         lblPret.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.TIP_INCORECT:
+                        lblTip.ForeColor = Color.Red;
                         break;
                 }
             }

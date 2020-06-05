@@ -15,7 +15,7 @@ namespace TargMasini_Forma_toolbox
 {
     public partial class Menu : Form
     {
-        IStocareData adminMasini;
+        //IStocareData adminMasini;
         //VerificareParola verpas = new VerificareParola();
         //Form1 frm1 = new Form1();
         public Menu()

@@ -32,7 +32,7 @@ namespace TargMasini_Forma_toolbox
         private void FormaEditare_Load(object sender,EventArgs e)
         {
             //lblAfisare.Text = masinaForma1.nume_vanzator;
-            lblAfisare.Text = masinaForma1.model;
+            //lblAfisare.Text = masinaForma1.model;
             txtNume1.Text = masinaForma1.nume_vanzator;
             txtPrenume.Text = masinaForma1.prenume_vanzator;
             txtMarca.Text = masinaForma1.firma;
@@ -67,28 +67,89 @@ namespace TargMasini_Forma_toolbox
         private void btnModifica_Click(object sender, EventArgs e)
         {
             
-            if (txtPret.Text != string.Empty)
+            lblMarca.ForeColor = Color.Black;
+            lblNume.ForeColor = Color.Black;
+            lblPrenume.ForeColor = Color.Black;
+            lblAn.ForeColor = Color.Black;
+            lblPret.ForeColor = Color.Black;
+            lblModel.ForeColor = Color.Black;
+            lblTip.ForeColor = Color.Black;
+            CodEroare validarea = Validare(txtNume1.Text, txtPrenume.Text, txtMarca.Text, txtMarca.Text, txtAn.Text, txtPret.Text);
+            if (validarea != CodEroare.CORECT)
             {
-                int prett = Int32.Parse(txtPret.Text);
-                masinaForma1.pret = prett;
+                switch (validarea)
+                {
+                    case CodEroare.NUME_INCORECT:
+                        lblNume.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.PRENUME_INCORECT:
+                        lblPrenume.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.MARCA_INCORECT:
+                        lblMarca.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.MODEL_INCORECT:
+                        lblModel.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.AN_INCORECT:
+                        lblAn.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.PRET_INCORECT:
+                        lblPret.ForeColor = Color.Red;
+                        break;
+                    case CodEroare.TIP_INCORECT:
+                        lblTip.ForeColor = Color.Red;
+                        break;
+                }
             }
-            masinaForma1.Culoare = GetCuloareMasina();
-            masinaForma1.Optiuni = new List<string>();
-            masinaForma1.Optiuni.AddRange(optiuniSelectate);
-            masinaForma1.nume_vanzator = txtNume1.Text;
-            masinaForma1.prenume_vanzator = txtPrenume.Text;
-            masinaForma1.firma = txtMarca.Text;
-            masinaForma1.model = txtModel.Text;
+            else
+            {
+                masinaForma1.Culoare = GetCuloareMasina();
+                masinaForma1.Optiuni = new List<string>();
+                masinaForma1.Optiuni.AddRange(optiuniSelectate);
+                masinaForma1.nume_vanzator = txtNume1.Text;
+                masinaForma1.prenume_vanzator = txtPrenume.Text;
+                masinaForma1.firma = txtMarca.Text;
+                masinaForma1.model = txtModel.Text;
 
-            masinaForma1.an = Int32.Parse(txtAn.Text);
-            masinaForma1.pret = Int32.Parse(txtPret.Text);
-            if (cmbTip.Text != "")
-            {
-                masinaForma1.tip = cmbTip.Text;
+                masinaForma1.an = Int32.Parse(txtAn.Text);
+                masinaForma1.pret = Int32.Parse(txtPret.Text);
+                if (cmbTip.Text != "")
+                {
+                    masinaForma1.tip = cmbTip.Text;
+                }
+                adminMasini.UpdateMasina(masinaForma1);
+                masinaForma1.DataActualizare = DateTime.Now;
+                DialogResult = DialogResult.OK;
             }
-            adminMasini.UpdateMasina(masinaForma1);
-            masinaForma1.DataActualizare = DateTime.Now;
-            DialogResult = DialogResult.OK;
+        }
+        private CodEroare Validare(string nume, string prenume, string marca, string model, string an, string pret)
+        {
+            int ign;
+            if (nume == string.Empty)
+                return CodEroare.NUME_INCORECT;
+            if (prenume == string.Empty)
+                return CodEroare.PRENUME_INCORECT;
+            if (marca == string.Empty)
+                return CodEroare.MARCA_INCORECT;
+            if (model == string.Empty)
+                return CodEroare.MODEL_INCORECT;
+            if (an == string.Empty)
+                return CodEroare.AN_INCORECT;
+            bool succes = false;
+            succes = Int32.TryParse(an, out ign);
+            if (succes == false)
+                return CodEroare.AN_INCORECT;
+            if (pret == string.Empty)
+                return CodEroare.PRET_INCORECT;
+            succes = false;
+            succes = Int32.TryParse(pret, out ign);
+            if (succes == false)
+                return CodEroare.PRET_INCORECT;
+            if (cmbTip.Text == string.Empty)
+                return CodEroare.TIP_INCORECT;
+
+            return CodEroare.CORECT;
         }
         //private Optiuni GetOptiuni()    //modificat
         //{
@@ -135,7 +196,7 @@ namespace TargMasini_Forma_toolbox
 
         private void FormaEditare_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.ReftoForm1.Show();
+           // this.ReftoForm1.Show();
         }
     }
 }
