@@ -204,7 +204,7 @@ namespace TargMasini_Forma_toolbox
         private void AdaugaMasiniInControlDataGridView(List<masina> masini)
         {
             dataGridMasini.DataSource = null;
-            dataGridMasini.DataSource = masini.Select(m => new { m.IdMasina, m.nume_vanzator, m.prenume_vanzator , m.tip , m.DataActualizare , Optiuni=string.Join(",",m.Optiuni)}).ToList();
+            dataGridMasini.DataSource = masini.Select(m => new { m.IdMasina,m.firma,m.model,m.pret,m.an, m.nume_vanzator, m.prenume_vanzator , m.tip , m.DataActualizare , Optiuni=string.Join(",",m.Optiuni),m.Culoare,}).ToList();
             
         }
 
