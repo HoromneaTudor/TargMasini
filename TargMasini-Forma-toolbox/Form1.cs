@@ -214,7 +214,7 @@ namespace TargMasini_Forma_toolbox
             if (m != null)
             {
                 lblCauta.Text = m.ConversieLaSir();
-                lblModifica.Text = "Introduceti noul pretsau optiuni si apasati modifica in cazul in care doriti modificarea acestuia";
+                lblModifica.Text = "Introduceti noul pretsau optiuni si apasati modificaPret in cazul in care doriti modificarea acestuia";
             }
             else
             {
@@ -451,6 +451,26 @@ namespace TargMasini_Forma_toolbox
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.ReftoMenu.Show();
+        }
+
+        private void btnModificaPret_Click(object sender, EventArgs e)
+        {
+            masina m = adminMasini.GetMasina(txtNume.Text, txtPrenume.Text, txtModel.Text);
+            if (txtPret.Text != string.Empty)
+                {
+                    int prett = Int32.Parse(txtPret.Text);
+                    m.pret = prett;
+                }
+                //m.Culoare = GetCuloareMasina();
+                //m.OptiuniMasina = GetOptiuni();
+                adminMasini.UpdateMasina(m);
+            txtNume.Enabled = true;
+            txtPrenume.Enabled = true;
+            txtAn.Enabled = true;
+            txtMarca.Enabled = true;
+            txtModel.Enabled = true;
+            ResetareControale();
+            lblModifica.Text = "Modificare realizata cu scucess!";
         }
 
 

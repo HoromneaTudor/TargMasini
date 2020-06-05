@@ -75,6 +75,7 @@ namespace TargMasini_Forma_toolbox
             this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.btnInapoi = new System.Windows.Forms.Button();
             this.lblTip = new System.Windows.Forms.Label();
+            this.btnModificaPret = new System.Windows.Forms.Button();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
@@ -84,19 +85,19 @@ namespace TargMasini_Forma_toolbox
             // lblModifica
             // 
             this.lblModifica.AutoSize = true;
-            this.lblModifica.Location = new System.Drawing.Point(160, 516);
+            this.lblModifica.Location = new System.Drawing.Point(206, 520);
             this.lblModifica.Name = "lblModifica";
             this.lblModifica.Size = new System.Drawing.Size(0, 13);
             this.lblModifica.TabIndex = 31;
             // 
             // btnModifica
             // 
-            this.btnModifica.Location = new System.Drawing.Point(64, 513);
+            this.btnModifica.Location = new System.Drawing.Point(64, 509);
             this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(56, 19);
+            this.btnModifica.Size = new System.Drawing.Size(108, 34);
             this.btnModifica.TabIndex = 30;
-            this.btnModifica.Text = "Modifica";
+            this.btnModifica.Text = "Modifica Selectand Din ListBox";
             this.btnModifica.UseVisualStyleBackColor = true;
             this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
@@ -512,6 +513,16 @@ namespace TargMasini_Forma_toolbox
             this.lblTip.TabIndex = 50;
             this.lblTip.Text = "Tip";
             // 
+            // btnModificaPret
+            // 
+            this.btnModificaPret.Location = new System.Drawing.Point(130, 480);
+            this.btnModificaPret.Name = "btnModificaPret";
+            this.btnModificaPret.Size = new System.Drawing.Size(75, 23);
+            this.btnModificaPret.TabIndex = 51;
+            this.btnModificaPret.Text = "ModificaPret";
+            this.btnModificaPret.UseVisualStyleBackColor = true;
+            this.btnModificaPret.Click += new System.EventHandler(this.btnModificaPret_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,6 +530,7 @@ namespace TargMasini_Forma_toolbox
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.Untitlesadd___Copy;
             this.ClientSize = new System.Drawing.Size(1549, 588);
+            this.Controls.Add(this.btnModificaPret);
             this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.dateTimePicker2);
@@ -615,6 +627,7 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.SaveFileDialog sfd;
         private System.Windows.Forms.Button btnInapoi;
         private System.Windows.Forms.Label lblTip;
+        private System.Windows.Forms.Button btnModificaPret;
     }
 }
 
