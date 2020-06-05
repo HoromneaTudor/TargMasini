@@ -93,13 +93,13 @@ namespace TargMasini_Forma_toolbox
             if (model == string.Empty)
                 return CodEroare.MODEL_INCORECT;
             if (an == string.Empty)
-                return CodEroare.AN_INCORECT; 
-            if (pret == string.Empty)
-               return CodEroare.PRET_INCORECT;
+                return CodEroare.AN_INCORECT;
             bool succes = false;
             succes = Int32.TryParse(an, out ign);
             if (succes == false)
                 return CodEroare.AN_INCORECT;
+            if (pret == string.Empty)
+               return CodEroare.PRET_INCORECT;
             succes = false;
             succes = Int32.TryParse(pret, out ign);
             if (succes == false)
