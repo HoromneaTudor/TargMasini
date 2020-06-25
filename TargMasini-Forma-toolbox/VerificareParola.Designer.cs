@@ -34,11 +34,18 @@ namespace TargMasini_Forma_toolbox
             this.lblTextParola = new System.Windows.Forms.Label();
             this.btnVerificare = new System.Windows.Forms.Button();
             this.btnInapoi = new System.Windows.Forms.Button();
+            this.lblParolaActuala = new System.Windows.Forms.Label();
+            this.txtParolaActuala = new System.Windows.Forms.TextBox();
+            this.lblParolaNoua = new System.Windows.Forms.Label();
+            this.txtParolaNoua = new System.Windows.Forms.TextBox();
+            this.btnSchimbareParola = new System.Windows.Forms.Button();
+            this.btnConfirmare = new System.Windows.Forms.Button();
+            this.lblConfirmare = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtParola
             // 
-            this.txtParola.Location = new System.Drawing.Point(92, 38);
+            this.txtParola.Location = new System.Drawing.Point(66, 24);
             this.txtParola.Name = "txtParola";
             this.txtParola.PasswordChar = '*';
             this.txtParola.Size = new System.Drawing.Size(100, 20);
@@ -48,7 +55,7 @@ namespace TargMasini_Forma_toolbox
             // lblParola
             // 
             this.lblParola.AutoSize = true;
-            this.lblParola.Location = new System.Drawing.Point(38, 38);
+            this.lblParola.Location = new System.Drawing.Point(20, 24);
             this.lblParola.Name = "lblParola";
             this.lblParola.Size = new System.Drawing.Size(40, 13);
             this.lblParola.TabIndex = 1;
@@ -57,14 +64,14 @@ namespace TargMasini_Forma_toolbox
             // lblTextParola
             // 
             this.lblTextParola.AutoSize = true;
-            this.lblTextParola.Location = new System.Drawing.Point(222, 45);
+            this.lblTextParola.Location = new System.Drawing.Point(20, 70);
             this.lblTextParola.Name = "lblTextParola";
             this.lblTextParola.Size = new System.Drawing.Size(0, 13);
             this.lblTextParola.TabIndex = 2;
             // 
             // btnVerificare
             // 
-            this.btnVerificare.Location = new System.Drawing.Point(41, 92);
+            this.btnVerificare.Location = new System.Drawing.Point(33, 141);
             this.btnVerificare.Name = "btnVerificare";
             this.btnVerificare.Size = new System.Drawing.Size(75, 23);
             this.btnVerificare.TabIndex = 3;
@@ -74,7 +81,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnInapoi
             // 
-            this.btnInapoi.Location = new System.Drawing.Point(147, 92);
+            this.btnInapoi.Location = new System.Drawing.Point(139, 141);
             this.btnInapoi.Name = "btnInapoi";
             this.btnInapoi.Size = new System.Drawing.Size(75, 23);
             this.btnInapoi.TabIndex = 4;
@@ -82,11 +89,80 @@ namespace TargMasini_Forma_toolbox
             this.btnInapoi.UseVisualStyleBackColor = true;
             this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
             // 
+            // lblParolaActuala
+            // 
+            this.lblParolaActuala.AutoSize = true;
+            this.lblParolaActuala.Location = new System.Drawing.Point(259, 26);
+            this.lblParolaActuala.Name = "lblParolaActuala";
+            this.lblParolaActuala.Size = new System.Drawing.Size(78, 13);
+            this.lblParolaActuala.TabIndex = 6;
+            this.lblParolaActuala.Text = "Parola actuala:";
+            // 
+            // txtParolaActuala
+            // 
+            this.txtParolaActuala.Location = new System.Drawing.Point(340, 23);
+            this.txtParolaActuala.Name = "txtParolaActuala";
+            this.txtParolaActuala.PasswordChar = '*';
+            this.txtParolaActuala.Size = new System.Drawing.Size(100, 20);
+            this.txtParolaActuala.TabIndex = 5;
+            // 
+            // lblParolaNoua
+            // 
+            this.lblParolaNoua.AutoSize = true;
+            this.lblParolaNoua.Location = new System.Drawing.Point(259, 52);
+            this.lblParolaNoua.Name = "lblParolaNoua";
+            this.lblParolaNoua.Size = new System.Drawing.Size(67, 13);
+            this.lblParolaNoua.TabIndex = 8;
+            this.lblParolaNoua.Text = "Parola noua:";
+            // 
+            // txtParolaNoua
+            // 
+            this.txtParolaNoua.Location = new System.Drawing.Point(340, 49);
+            this.txtParolaNoua.Name = "txtParolaNoua";
+            this.txtParolaNoua.PasswordChar = '*';
+            this.txtParolaNoua.Size = new System.Drawing.Size(100, 20);
+            this.txtParolaNoua.TabIndex = 7;
+            // 
+            // btnSchimbareParola
+            // 
+            this.btnSchimbareParola.Location = new System.Drawing.Point(271, 141);
+            this.btnSchimbareParola.Name = "btnSchimbareParola";
+            this.btnSchimbareParola.Size = new System.Drawing.Size(127, 23);
+            this.btnSchimbareParola.TabIndex = 9;
+            this.btnSchimbareParola.Text = "Schimbare parola";
+            this.btnSchimbareParola.UseVisualStyleBackColor = true;
+            this.btnSchimbareParola.Click += new System.EventHandler(this.btnSchimbareParola_Click);
+            // 
+            // btnConfirmare
+            // 
+            this.btnConfirmare.Location = new System.Drawing.Point(416, 140);
+            this.btnConfirmare.Name = "btnConfirmare";
+            this.btnConfirmare.Size = new System.Drawing.Size(129, 23);
+            this.btnConfirmare.TabIndex = 10;
+            this.btnConfirmare.Text = "Confirmare parola";
+            this.btnConfirmare.UseVisualStyleBackColor = true;
+            this.btnConfirmare.Click += new System.EventHandler(this.btnConfirmare_Click);
+            // 
+            // lblConfirmare
+            // 
+            this.lblConfirmare.AutoSize = true;
+            this.lblConfirmare.Location = new System.Drawing.Point(271, 93);
+            this.lblConfirmare.Name = "lblConfirmare";
+            this.lblConfirmare.Size = new System.Drawing.Size(0, 13);
+            this.lblConfirmare.TabIndex = 11;
+            // 
             // VerificareParola
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(406, 135);
+            this.ClientSize = new System.Drawing.Size(548, 244);
+            this.Controls.Add(this.lblConfirmare);
+            this.Controls.Add(this.btnConfirmare);
+            this.Controls.Add(this.btnSchimbareParola);
+            this.Controls.Add(this.lblParolaNoua);
+            this.Controls.Add(this.txtParolaNoua);
+            this.Controls.Add(this.lblParolaActuala);
+            this.Controls.Add(this.txtParolaActuala);
             this.Controls.Add(this.btnInapoi);
             this.Controls.Add(this.btnVerificare);
             this.Controls.Add(this.lblTextParola);
@@ -95,6 +171,7 @@ namespace TargMasini_Forma_toolbox
             this.Name = "VerificareParola";
             this.Text = "VerificareParola";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VerificareParola_FormClosing);
+            this.Load += new System.EventHandler(this.VerificareParola_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +184,12 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.Label lblTextParola;
         private System.Windows.Forms.Button btnVerificare;
         private System.Windows.Forms.Button btnInapoi;
+        private System.Windows.Forms.Label lblParolaActuala;
+        private System.Windows.Forms.TextBox txtParolaActuala;
+        private System.Windows.Forms.Label lblParolaNoua;
+        private System.Windows.Forms.TextBox txtParolaNoua;
+        private System.Windows.Forms.Button btnSchimbareParola;
+        private System.Windows.Forms.Button btnConfirmare;
+        private System.Windows.Forms.Label lblConfirmare;
     }
 }

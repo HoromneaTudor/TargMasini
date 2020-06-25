@@ -417,7 +417,7 @@ namespace TargMasini_Forma_toolbox
         {
             List<masina> masini = adminMasini.GetMasiniFiltrare(dateTimePicker1.Value, dateTimePicker2.Value);
             sfd.ShowDialog();
-            salvareFiltrare(masini,sfd.FileName);
+            salvareFiltrare(masini,sfd.FileName+".txt");
         }
         public void salvareFiltrare(List<masina>masini,string numeFisier)
         {

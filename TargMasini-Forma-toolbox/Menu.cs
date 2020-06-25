@@ -45,5 +45,13 @@ namespace TargMasini_Forma_toolbox
             this.Hide();
             infa.Show();
         }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            client cli = new client();
+            cli.ReftoMenu = this;
+            this.Hide();
+            cli.Show();
+        }
     }
 }

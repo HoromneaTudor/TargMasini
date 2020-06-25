@@ -32,6 +32,7 @@ namespace TargMasini_Forma_toolbox
             this.btnAdministrare = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.btnClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdministrare
@@ -46,7 +47,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(47, 122);
+            this.btnExit.Location = new System.Drawing.Point(47, 168);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(145, 23);
             this.btnExit.TabIndex = 2;
@@ -56,7 +57,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnInfo
             // 
-            this.btnInfo.Location = new System.Drawing.Point(47, 77);
+            this.btnInfo.Location = new System.Drawing.Point(47, 123);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(145, 23);
             this.btnInfo.TabIndex = 3;
@@ -64,12 +65,23 @@ namespace TargMasini_Forma_toolbox
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
+            // btnClient
+            // 
+            this.btnClient.Location = new System.Drawing.Point(47, 75);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(145, 23);
+            this.btnClient.TabIndex = 4;
+            this.btnClient.Text = "Client";
+            this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.a2699c2704acf7306c5af87ddea663bd;
             this.ClientSize = new System.Drawing.Size(628, 498);
+            this.Controls.Add(this.btnClient);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdministrare);
@@ -84,5 +96,6 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.Button btnAdministrare;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnInfo;
+        private System.Windows.Forms.Button btnClient;
     }
 }
