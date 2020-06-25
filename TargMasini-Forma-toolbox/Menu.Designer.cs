@@ -69,7 +69,7 @@ namespace TargMasini_Forma_toolbox
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.a2699c2704acf7306c5af87ddea663bd;
-            this.ClientSize = new System.Drawing.Size(628, 491);
+            this.ClientSize = new System.Drawing.Size(628, 498);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAdministrare);

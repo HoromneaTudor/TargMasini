@@ -85,7 +85,7 @@ namespace TargMasini_Forma_toolbox
             // lblModifica
             // 
             this.lblModifica.AutoSize = true;
-            this.lblModifica.Location = new System.Drawing.Point(206, 520);
+            this.lblModifica.Location = new System.Drawing.Point(258, 520);
             this.lblModifica.Name = "lblModifica";
             this.lblModifica.Size = new System.Drawing.Size(0, 13);
             this.lblModifica.TabIndex = 31;
@@ -95,7 +95,7 @@ namespace TargMasini_Forma_toolbox
             this.btnModifica.Location = new System.Drawing.Point(64, 509);
             this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(108, 34);
+            this.btnModifica.Size = new System.Drawing.Size(141, 34);
             this.btnModifica.TabIndex = 30;
             this.btnModifica.Text = "Modifica Selectand Din ListBox";
             this.btnModifica.UseVisualStyleBackColor = true;
@@ -464,7 +464,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(209, 26);
+            this.dateTimePicker2.Location = new System.Drawing.Point(448, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 47;

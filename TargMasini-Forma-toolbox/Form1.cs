@@ -303,13 +303,13 @@ namespace TargMasini_Forma_toolbox
             //sau
             //CheckBox checkBoxControl = (CheckBox)sender;  //operator cast
 
-            string disciplinaSelectata = checkBoxControl.Text;
+            string optiuneSelectata = checkBoxControl.Text;
 
             //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
             if (checkBoxControl.Checked == true)
-                optiuniSelectate.Add(disciplinaSelectata);
+                optiuniSelectate.Add(optiuneSelectata);
             else
-                optiuniSelectate.Remove(disciplinaSelectata);
+                optiuniSelectate.Remove(optiuneSelectata);
         }
 
         private void ResetareControale()
@@ -369,6 +369,10 @@ namespace TargMasini_Forma_toolbox
                 txtNume.Text = m.nume_vanzator;
                 txtPrenume.Text = m.prenume_vanzator;
                 txtModel.Text = m.model;
+                txtMarca.Text = m.firma;
+                txtAn.Text = m.an.ToString();
+                txtPret.Text = m.pret.ToString();
+                cmbTip.Text = m.tip;
 
                 foreach (var prgstd in gpbCuloar.Controls)
                 {
