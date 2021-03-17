@@ -31,13 +31,13 @@ namespace TargMasini_Forma_toolbox
         private void btnAdauga_Click(object sender, EventArgs e)
         {
             masina m;
-            lblMarca.ForeColor = Color.Black;
-            lblNume.ForeColor = Color.Black;
-            lblPrenume.ForeColor = Color.Black;
-            lblAn.ForeColor = Color.Black;
-            lblPret.ForeColor = Color.Black;
-            lblModel.ForeColor = Color.Black;
-            lblTip.ForeColor = Color.Black;
+            lblMarca.ForeColor = Color.Gainsboro;
+            lblNume.ForeColor = Color.Gainsboro;
+            lblPrenume.ForeColor = Color.Gainsboro;
+            lblAn.ForeColor = Color.Gainsboro;
+            lblPret.ForeColor = Color.Gainsboro;
+            lblModel.ForeColor = Color.Gainsboro;
+            lblTip.ForeColor = Color.Gainsboro;
             CodEroare validarea = Validare(txtNume.Text, txtPrenume.Text, txtMarca.Text, txtMarca.Text, txtAn.Text, txtPret.Text);
             if (validarea!=CodEroare.CORECT)
             {
@@ -119,13 +119,13 @@ namespace TargMasini_Forma_toolbox
         {
             masina m;
             //ResetareControale();
-            lblMarca.ForeColor = Color.Black;
-            lblNume.ForeColor = Color.Black;
-            lblPrenume.ForeColor = Color.Black;
-            lblAn.ForeColor = Color.Black;
-            lblPret.ForeColor = Color.Black;
-            lblModel.ForeColor = Color.Black;
-            lblTip.ForeColor = Color.Black;
+            lblMarca.ForeColor = Color.Gainsboro;
+            lblNume.ForeColor = Color.Gainsboro;
+            lblPrenume.ForeColor = Color.Gainsboro;
+            lblAn.ForeColor = Color.Gainsboro;
+            lblPret.ForeColor = Color.Gainsboro;
+            lblModel.ForeColor = Color.Gainsboro;
+            lblTip.ForeColor = Color.Gainsboro;
             CodEroare validarea = Validare(txtNume.Text, txtPrenume.Text, txtMarca.Text, txtMarca.Text, txtAn.Text, txtPret.Text);
             if (validarea != CodEroare.CORECT)
             {
@@ -210,34 +210,107 @@ namespace TargMasini_Forma_toolbox
 
         private void btnCauta_Click(object sender, EventArgs e)
         {
-            masina m = adminMasini.GetMasina(txtNume.Text, txtPrenume.Text, txtModel.Text);
-            if (m != null)
-            {
-                lblCauta.Text = m.ConversieLaSir();
-                lblModifica.Text = "Introduceti noul pretsau optiuni si apasati modificaPret in cazul in care doriti modificarea acestuia";
-            }
-            else
-            {
-                lblCauta.Text = "Nu sa gasit masina";
-               
-            }
-            if (txtNume.Enabled == true && txtPrenume.Enabled == true)
-            {
-                txtNume.Enabled = false;
-                txtPrenume.Enabled = false;
-                txtAn.Enabled = false;
-                txtMarca.Enabled = false;
-                txtModel.Enabled = false;
+            //vechea metoda
+            //masina m = adminMasini.GetMasina(txtNume.Text, txtPrenume.Text, txtModel.Text);
+            //if (m != null)
+            //{
+            //    lblCauta.Text = m.ConversieLaSir();
+            //    lblModifica.Text = "Introduceti noul pretsau optiuni si apasati modificaPret in cazul in care doriti modificarea acestuia";
+            //}
+            //else
+            //{
+            //    lblCauta.Text = "Nu sa gasit masina";
 
-            }
-            else
+            //}
+            //if (txtNume.Enabled == true && txtPrenume.Enabled == true)
+            //{
+            //    txtNume.Enabled = false;
+            //    txtPrenume.Enabled = false;
+            //    txtAn.Enabled = false;
+            //    txtMarca.Enabled = false;
+            //    txtModel.Enabled = false;
+
+            //}
+            //else
+            //{
+            //    txtNume.Enabled = true;
+            //    txtPrenume.Enabled = true;
+            //    txtAn.Enabled = true;
+            //    txtMarca.Enabled = true;
+            //    txtModel.Enabled = true;
+            //}
+
+            //noua metoda
+            lblEroareCautare.Text = "";
+            bool succes;
+            int ign;
+            List<masina> cautate = new List<masina>();
+            List<masina> masini = adminMasini.GetMasini();
+            if (cmbCautare.Text == "nume")
             {
-                txtNume.Enabled = true;
-                txtPrenume.Enabled = true;
-                txtAn.Enabled = true;
-                txtMarca.Enabled = true;
-                txtModel.Enabled = true;
+                //lblCautare.Text = cmbCautare.Text;
+                foreach (masina m in masini)
+                {
+                    if (m.nume_vanzator == txtCautare.Text)
+                    {
+                        cautate.Add(m);
+                    }
+                }
             }
+            if (cmbCautare.Text == "prenume")
+            {
+                // lblCautare.Text = "Prenume";
+                foreach (masina m in masini)
+                {
+                    if (m.prenume_vanzator == txtCautare.Text)
+                    {
+                        cautate.Add(m);
+                    }
+                }
+            }
+            //string buff;
+
+            if (cmbCautare.Text == "pret")
+            {
+                succes = Int32.TryParse(txtCautare.Text, out ign);
+                if (succes)
+                {
+                    foreach (masina m in masini)
+                    {
+                        if (m.pret == Int32.Parse(txtCautare.Text))
+                        {
+                            cautate.Add(m);
+                        }
+                    }
+                }
+                else
+                {
+                    lblEroareCautare.ForeColor = Color.Red;
+                    lblEroareCautare.Text = "Valoarea introdusa nu este valida!!!";
+                }
+                // lblCautare.Text = "Pret";
+            }
+            if (cmbCautare.Text == "an")
+            {
+                succes = Int32.TryParse(txtCautare.Text, out ign);
+                // lblCautare.Text = "An";
+                if (succes)
+                {
+                    foreach (masina m in masini)
+                    {
+                        if (m.an == Int32.Parse(txtCautare.Text))
+                        {
+                            cautate.Add(m);
+                        }
+                    }
+                }
+                else
+                {
+                    lblEroareCautare.ForeColor = Color.Red;
+                    lblEroareCautare.Text = "Valoarea introdusa nu este valida!!!";
+                }
+            }
+            dataGridMasini.DataSource = cautate.Select(m => new { m.IdMasina, m.firma, m.model, m.pret, m.an, m.nume_vanzator, m.prenume_vanzator, m.tip, m.DataActualizare, Optiuni = string.Join(",", m.Optiuni), m.Culoare, }).ToList();
         }
 
         private void btnModifica_Click(object sender, EventArgs e)
@@ -256,6 +329,8 @@ namespace TargMasini_Forma_toolbox
                 //m.Culoare = GetCuloareMasina();
                 //m.OptiuniMasina = GetOptiuni();
                 //adminMasini.UpdateMasina(m);
+
+
                 using (FormaEditare formEdit = new FormaEditare(m)) 
                 {
                     //formEdit.ReftoForm1 = this;
@@ -430,6 +505,7 @@ namespace TargMasini_Forma_toolbox
                     foreach (masina m in masini)
                     {
                         swFisierText.WriteLine(m.ConversieLaSir());
+                        swFisierText.WriteLine("\n");
                     }
                 }
             }
@@ -448,13 +524,13 @@ namespace TargMasini_Forma_toolbox
         private void btnInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
-            this.ReftoMenu.Show();
+            //this.ReftoMenu.Show();
             
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.ReftoMenu.Show();
+            //this.ReftoMenu.Show();
         }
 
         private void btnModificaPret_Click(object sender, EventArgs e)
@@ -475,6 +551,15 @@ namespace TargMasini_Forma_toolbox
             txtModel.Enabled = true;
             ResetareControale();
             lblModifica.Text = "Modificare realizata cu scucess!";
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            masina m = adminMasini.GetMasina(txtNume.Text, txtPrenume.Text, txtModel.Text);
+            if(m!=null)
+            {
+                adminMasini.deleteMasina(m);
+            }
         }
 
 

@@ -29,6 +29,7 @@ namespace TargMasini_Forma_toolbox
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblModifica = new System.Windows.Forms.Label();
             this.btnModifica = new System.Windows.Forms.Button();
             this.lblCauta = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@ namespace TargMasini_Forma_toolbox
             this.gpbOptiuni = new System.Windows.Forms.GroupBox();
             this.lblMesaj = new System.Windows.Forms.Label();
             this.lstAfisare = new System.Windows.Forms.ListBox();
-            this.dataGridMasini = new System.Windows.Forms.DataGridView();
             this.cmbTip = new System.Windows.Forms.ComboBox();
             this.lblID = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -76,29 +76,39 @@ namespace TargMasini_Forma_toolbox
             this.btnInapoi = new System.Windows.Forms.Button();
             this.lblTip = new System.Windows.Forms.Label();
             this.btnModificaPret = new System.Windows.Forms.Button();
+            this.dataGridMasini = new System.Windows.Forms.DataGridView();
+            this.cmbCautare = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCautare = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblEroareCautare = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.gpbCuloar.SuspendLayout();
             this.gpbOptiuni.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblModifica
             // 
             this.lblModifica.AutoSize = true;
-            this.lblModifica.Location = new System.Drawing.Point(258, 520);
+            this.lblModifica.Location = new System.Drawing.Point(228, 595);
             this.lblModifica.Name = "lblModifica";
             this.lblModifica.Size = new System.Drawing.Size(0, 13);
             this.lblModifica.TabIndex = 31;
             // 
             // btnModifica
             // 
-            this.btnModifica.Location = new System.Drawing.Point(64, 509);
+            this.btnModifica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModifica.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnModifica.Location = new System.Drawing.Point(64, 552);
             this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
             this.btnModifica.Size = new System.Drawing.Size(141, 34);
             this.btnModifica.TabIndex = 30;
             this.btnModifica.Text = "Modifica Selectand Din ListBox";
-            this.btnModifica.UseVisualStyleBackColor = true;
+            this.btnModifica.UseVisualStyleBackColor = false;
             this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
             // lblCauta
@@ -112,24 +122,28 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnCauta
             // 
+            this.btnCauta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCauta.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCauta.Location = new System.Drawing.Point(64, 480);
             this.btnCauta.Margin = new System.Windows.Forms.Padding(2);
             this.btnCauta.Name = "btnCauta";
             this.btnCauta.Size = new System.Drawing.Size(56, 19);
             this.btnCauta.TabIndex = 28;
             this.btnCauta.Text = "Cauta";
-            this.btnCauta.UseVisualStyleBackColor = true;
+            this.btnCauta.UseVisualStyleBackColor = false;
             this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
             // 
             // btnAfiseaza
             // 
-            this.btnAfiseaza.Location = new System.Drawing.Point(64, 214);
+            this.btnAfiseaza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAfiseaza.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAfiseaza.Location = new System.Drawing.Point(64, 209);
             this.btnAfiseaza.Margin = new System.Windows.Forms.Padding(2);
             this.btnAfiseaza.Name = "btnAfiseaza";
-            this.btnAfiseaza.Size = new System.Drawing.Size(56, 19);
+            this.btnAfiseaza.Size = new System.Drawing.Size(56, 24);
             this.btnAfiseaza.TabIndex = 26;
             this.btnAfiseaza.Text = "Afiseaza";
-            this.btnAfiseaza.UseVisualStyleBackColor = true;
+            this.btnAfiseaza.UseVisualStyleBackColor = false;
             this.btnAfiseaza.Click += new System.EventHandler(this.btnAfiseaza_Click);
             // 
             // lblAdauga
@@ -143,17 +157,21 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnMedie
             // 
-            this.btnMedie.Location = new System.Drawing.Point(64, 149);
+            this.btnMedie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnMedie.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnMedie.Location = new System.Drawing.Point(64, 145);
             this.btnMedie.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedie.Name = "btnMedie";
-            this.btnMedie.Size = new System.Drawing.Size(56, 19);
+            this.btnMedie.Size = new System.Drawing.Size(56, 23);
             this.btnMedie.TabIndex = 23;
             this.btnMedie.Text = "Vechime";
-            this.btnMedie.UseVisualStyleBackColor = true;
+            this.btnMedie.UseVisualStyleBackColor = false;
             this.btnMedie.Click += new System.EventHandler(this.btnMedie_Click);
             // 
             // txtMarca
             // 
+            this.txtMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtMarca.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtMarca.Location = new System.Drawing.Point(124, 110);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarca.Name = "txtMarca";
@@ -162,6 +180,8 @@ namespace TargMasini_Forma_toolbox
             // 
             // txtPrenume
             // 
+            this.txtPrenume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrenume.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtPrenume.Location = new System.Drawing.Point(124, 76);
             this.txtPrenume.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrenume.Name = "txtPrenume";
@@ -170,6 +190,8 @@ namespace TargMasini_Forma_toolbox
             // 
             // txtNume
             // 
+            this.txtNume.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNume.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtNume.Location = new System.Drawing.Point(124, 48);
             this.txtNume.Margin = new System.Windows.Forms.Padding(2);
             this.txtNume.Name = "txtNume";
@@ -178,18 +200,21 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnAdauga
             // 
+            this.btnAdauga.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAdauga.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAdauga.Location = new System.Drawing.Point(64, 176);
             this.btnAdauga.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdauga.Name = "btnAdauga";
             this.btnAdauga.Size = new System.Drawing.Size(56, 23);
             this.btnAdauga.TabIndex = 19;
             this.btnAdauga.Text = "Adauga";
-            this.btnAdauga.UseVisualStyleBackColor = true;
+            this.btnAdauga.UseVisualStyleBackColor = false;
             this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
+            this.lblMarca.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblMarca.Location = new System.Drawing.Point(61, 110);
             this.lblMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMarca.Name = "lblMarca";
@@ -200,6 +225,7 @@ namespace TargMasini_Forma_toolbox
             // lblPrenume
             // 
             this.lblPrenume.AutoSize = true;
+            this.lblPrenume.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblPrenume.Location = new System.Drawing.Point(61, 79);
             this.lblPrenume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrenume.Name = "lblPrenume";
@@ -210,6 +236,7 @@ namespace TargMasini_Forma_toolbox
             // lblNume
             // 
             this.lblNume.AutoSize = true;
+            this.lblNume.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblNume.Location = new System.Drawing.Point(61, 52);
             this.lblNume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNume.Name = "lblNume";
@@ -219,6 +246,8 @@ namespace TargMasini_Forma_toolbox
             // 
             // txtPret
             // 
+            this.txtPret.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPret.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtPret.Location = new System.Drawing.Point(295, 110);
             this.txtPret.Margin = new System.Windows.Forms.Padding(2);
             this.txtPret.Name = "txtPret";
@@ -227,6 +256,8 @@ namespace TargMasini_Forma_toolbox
             // 
             // txtAn
             // 
+            this.txtAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtAn.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtAn.Location = new System.Drawing.Point(295, 76);
             this.txtAn.Margin = new System.Windows.Forms.Padding(2);
             this.txtAn.Name = "txtAn";
@@ -235,6 +266,8 @@ namespace TargMasini_Forma_toolbox
             // 
             // txtModel
             // 
+            this.txtModel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtModel.ForeColor = System.Drawing.Color.Gainsboro;
             this.txtModel.Location = new System.Drawing.Point(295, 48);
             this.txtModel.Margin = new System.Windows.Forms.Padding(2);
             this.txtModel.Name = "txtModel";
@@ -244,6 +277,7 @@ namespace TargMasini_Forma_toolbox
             // lblPret
             // 
             this.lblPret.AutoSize = true;
+            this.lblPret.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblPret.Location = new System.Drawing.Point(232, 110);
             this.lblPret.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPret.Name = "lblPret";
@@ -254,6 +288,7 @@ namespace TargMasini_Forma_toolbox
             // lblAn
             // 
             this.lblAn.AutoSize = true;
+            this.lblAn.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblAn.Location = new System.Drawing.Point(232, 81);
             this.lblAn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAn.Name = "lblAn";
@@ -264,6 +299,7 @@ namespace TargMasini_Forma_toolbox
             // lblModel
             // 
             this.lblModel.AutoSize = true;
+            this.lblModel.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblModel.Location = new System.Drawing.Point(232, 52);
             this.lblModel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModel.Name = "lblModel";
@@ -288,6 +324,7 @@ namespace TargMasini_Forma_toolbox
             this.gpbCuloar.Controls.Add(this.lblAdauga);
             this.gpbCuloar.Controls.Add(this.rdbRosu);
             this.gpbCuloar.Controls.Add(this.rdbAlbastru);
+            this.gpbCuloar.ForeColor = System.Drawing.Color.Gainsboro;
             this.gpbCuloar.Location = new System.Drawing.Point(64, 265);
             this.gpbCuloar.Name = "gpbCuloar";
             this.gpbCuloar.Size = new System.Drawing.Size(244, 100);
@@ -400,6 +437,7 @@ namespace TargMasini_Forma_toolbox
             this.gpbOptiuni.Controls.Add(this.ckbAerConditionat);
             this.gpbOptiuni.Controls.Add(this.ckbScaunePiele);
             this.gpbOptiuni.Controls.Add(this.ckbLuminiCeata);
+            this.gpbOptiuni.ForeColor = System.Drawing.Color.Gainsboro;
             this.gpbOptiuni.Location = new System.Drawing.Point(64, 371);
             this.gpbOptiuni.Name = "gpbOptiuni";
             this.gpbOptiuni.Size = new System.Drawing.Size(244, 100);
@@ -417,21 +455,14 @@ namespace TargMasini_Forma_toolbox
             // 
             // lstAfisare
             // 
+            this.lstAfisare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lstAfisare.ForeColor = System.Drawing.Color.Gainsboro;
             this.lstAfisare.FormattingEnabled = true;
-            this.lstAfisare.Location = new System.Drawing.Point(448, 179);
+            this.lstAfisare.Location = new System.Drawing.Point(348, 155);
             this.lstAfisare.Name = "lstAfisare";
             this.lstAfisare.Size = new System.Drawing.Size(544, 316);
             this.lstAfisare.TabIndex = 42;
             this.lstAfisare.SelectedIndexChanged += new System.EventHandler(this.lstAfisare_SelectedIndexChanged);
-            // 
-            // dataGridMasini
-            // 
-            this.dataGridMasini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridMasini.Location = new System.Drawing.Point(998, 179);
-            this.dataGridMasini.Name = "dataGridMasini";
-            this.dataGridMasini.Size = new System.Drawing.Size(551, 316);
-            this.dataGridMasini.TabIndex = 43;
-            this.dataGridMasini.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMasini_CellContentClick);
             // 
             // cmbTip
             // 
@@ -448,6 +479,7 @@ namespace TargMasini_Forma_toolbox
             // lblID
             // 
             this.lblID.AutoSize = true;
+            this.lblID.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblID.Location = new System.Drawing.Point(445, 51);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(21, 13);
@@ -456,7 +488,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(209, 0);
+            this.dateTimePicker1.Location = new System.Drawing.Point(209, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 46;
@@ -464,13 +496,14 @@ namespace TargMasini_Forma_toolbox
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(448, 0);
+            this.dateTimePicker2.Location = new System.Drawing.Point(448, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 47;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.filtrareVehiculeToolStripMenuItem,
             this.salvareMasiniToolStripMenuItem});
@@ -482,6 +515,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // filtrareVehiculeToolStripMenuItem
             // 
+            this.filtrareVehiculeToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
             this.filtrareVehiculeToolStripMenuItem.Name = "filtrareVehiculeToolStripMenuItem";
             this.filtrareVehiculeToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
             this.filtrareVehiculeToolStripMenuItem.Text = "Filtrare Vehicule";
@@ -489,6 +523,7 @@ namespace TargMasini_Forma_toolbox
             // 
             // salvareMasiniToolStripMenuItem
             // 
+            this.salvareMasiniToolStripMenuItem.ForeColor = System.Drawing.Color.Gainsboro;
             this.salvareMasiniToolStripMenuItem.Name = "salvareMasiniToolStripMenuItem";
             this.salvareMasiniToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.salvareMasiniToolStripMenuItem.Text = "Salvare Masini";
@@ -496,17 +531,20 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnInapoi
             // 
-            this.btnInapoi.Location = new System.Drawing.Point(64, 552);
+            this.btnInapoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnInapoi.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnInapoi.Location = new System.Drawing.Point(64, 595);
             this.btnInapoi.Name = "btnInapoi";
-            this.btnInapoi.Size = new System.Drawing.Size(75, 23);
+            this.btnInapoi.Size = new System.Drawing.Size(75, 30);
             this.btnInapoi.TabIndex = 49;
             this.btnInapoi.Text = "Inapoi";
-            this.btnInapoi.UseVisualStyleBackColor = true;
+            this.btnInapoi.UseVisualStyleBackColor = false;
             this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
             // 
             // lblTip
             // 
             this.lblTip.AutoSize = true;
+            this.lblTip.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTip.Location = new System.Drawing.Point(26, 241);
             this.lblTip.Name = "lblTip";
             this.lblTip.Size = new System.Drawing.Size(22, 13);
@@ -515,21 +553,104 @@ namespace TargMasini_Forma_toolbox
             // 
             // btnModificaPret
             // 
-            this.btnModificaPret.Location = new System.Drawing.Point(130, 480);
+            this.btnModificaPret.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnModificaPret.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnModificaPret.Location = new System.Drawing.Point(137, 209);
             this.btnModificaPret.Name = "btnModificaPret";
             this.btnModificaPret.Size = new System.Drawing.Size(75, 23);
             this.btnModificaPret.TabIndex = 51;
             this.btnModificaPret.Text = "ModificaPret";
-            this.btnModificaPret.UseVisualStyleBackColor = true;
+            this.btnModificaPret.UseVisualStyleBackColor = false;
             this.btnModificaPret.Click += new System.EventHandler(this.btnModificaPret_Click);
+            // 
+            // dataGridMasini
+            // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridMasini.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridMasini.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGridMasini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridMasini.Location = new System.Drawing.Point(898, 155);
+            this.dataGridMasini.Name = "dataGridMasini";
+            this.dataGridMasini.Size = new System.Drawing.Size(545, 316);
+            this.dataGridMasini.TabIndex = 53;
+            // 
+            // cmbCautare
+            // 
+            this.cmbCautare.FormattingEnabled = true;
+            this.cmbCautare.Items.AddRange(new object[] {
+            "pret",
+            "nume",
+            "prenume",
+            "an"});
+            this.cmbCautare.Location = new System.Drawing.Point(137, 480);
+            this.cmbCautare.Name = "cmbCautare";
+            this.cmbCautare.Size = new System.Drawing.Size(121, 21);
+            this.cmbCautare.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(63, 520);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Criteriul selectat :";
+            // 
+            // txtCautare
+            // 
+            this.txtCautare.Location = new System.Drawing.Point(163, 520);
+            this.txtCautare.Name = "txtCautare";
+            this.txtCautare.Size = new System.Drawing.Size(121, 20);
+            this.txtCautare.TabIndex = 56;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::TargMasini_Forma_toolbox.Properties.Resources.Renault_logo_6EF3576C2E_seeklogo2_com;
+            this.pictureBox1.Location = new System.Drawing.Point(1169, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 122);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 52;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblEroareCautare
+            // 
+            this.lblEroareCautare.AutoSize = true;
+            this.lblEroareCautare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEroareCautare.ForeColor = System.Drawing.Color.Black;
+            this.lblEroareCautare.Location = new System.Drawing.Point(336, 520);
+            this.lblEroareCautare.Name = "lblEroareCautare";
+            this.lblEroareCautare.Size = new System.Drawing.Size(0, 16);
+            this.lblEroareCautare.TabIndex = 57;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDelete.Location = new System.Drawing.Point(221, 553);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(178, 33);
+            this.btnDelete.TabIndex = 58;
+            this.btnDelete.Text = "Sterge vehicul selectat din lista";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.Untitlesadd___Copy;
-            this.ClientSize = new System.Drawing.Size(1549, 588);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ClientSize = new System.Drawing.Size(1549, 640);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.lblEroareCautare);
+            this.Controls.Add(this.txtCautare);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbCautare);
+            this.Controls.Add(this.dataGridMasini);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnModificaPret);
             this.Controls.Add(this.lblTip);
             this.Controls.Add(this.btnInapoi);
@@ -537,7 +658,6 @@ namespace TargMasini_Forma_toolbox
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.cmbTip);
-            this.Controls.Add(this.dataGridMasini);
             this.Controls.Add(this.lstAfisare);
             this.Controls.Add(this.lblMesaj);
             this.Controls.Add(this.gpbOptiuni);
@@ -563,6 +683,7 @@ namespace TargMasini_Forma_toolbox
             this.Controls.Add(this.lblPrenume);
             this.Controls.Add(this.lblNume);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -571,9 +692,10 @@ namespace TargMasini_Forma_toolbox
             this.gpbCuloar.PerformLayout();
             this.gpbOptiuni.ResumeLayout(false);
             this.gpbOptiuni.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridMasini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -615,7 +737,6 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.RadioButton rdbPortocaliu;
         private System.Windows.Forms.Label lblMesaj;
         private System.Windows.Forms.ListBox lstAfisare;
-        private System.Windows.Forms.DataGridView dataGridMasini;
         private System.Windows.Forms.ComboBox cmbTip;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -628,6 +749,13 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.Button btnInapoi;
         private System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.Button btnModificaPret;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridMasini;
+        private System.Windows.Forms.ComboBox cmbCautare;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCautare;
+        private System.Windows.Forms.Label lblEroareCautare;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

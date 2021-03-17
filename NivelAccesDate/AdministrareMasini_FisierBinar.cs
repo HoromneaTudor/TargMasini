@@ -42,6 +42,41 @@ namespace NivelAccesDate
                 throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
             }
         }
+        public bool deleteMasina(masina masinaStearsa)
+        {
+            bool ok = false;
+            List<masina> masini = GetMasini();
+            try
+            {
+                BinaryFormatter b = new BinaryFormatter();
+
+                //instructiunea 'using' va apela sBinFile.Close();
+                using (Stream sBinFile = File.Open(NumeFisier, FileMode.Truncate, FileAccess.Write))
+                {
+                    foreach (var m in masini)
+                    {
+                        //serializare unui obiect
+                        if (m.IdMasina == masinaStearsa.IdMasina)
+                        {
+                            
+                        }
+                        else
+                            b.Serialize(sBinFile, m);
+                    }
+                    ok = true;
+
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return ok;
+        }
 
         public masina[] GetMasina(out int nrStudenti)
         {

@@ -265,5 +265,10 @@ namespace NivelAccesDate
             }
             return filtrate;
         }
+
+        public bool deleteMasina(masina masinaStearsa)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

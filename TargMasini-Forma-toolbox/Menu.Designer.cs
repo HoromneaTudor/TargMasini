@@ -33,6 +33,7 @@ namespace TargMasini_Forma_toolbox
             this.btnExit = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // btnAdministrare
@@ -75,6 +76,10 @@ namespace TargMasini_Forma_toolbox
             this.btnClient.UseVisualStyleBackColor = true;
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,5 +102,6 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Button btnClient;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

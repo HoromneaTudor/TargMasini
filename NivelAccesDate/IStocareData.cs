@@ -18,5 +18,7 @@ namespace NivelAccesDate
         List<masina> GetMasini();
         masina GetMasinaByIndex(int index);
         List<masina> GetMasiniFiltrare(DateTime dt1, DateTime dt2);
+
+        bool deleteMasina(masina masinaStearsa);
     }
 }

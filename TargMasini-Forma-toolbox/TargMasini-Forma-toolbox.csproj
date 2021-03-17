@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.13.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -65,11 +68,41 @@
     <Compile Include="FormaEditare.Designer.cs">
       <DependentUpon>FormaEditare.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpFormAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpFormAdministrator.Designer.cs">
+      <DependentUpon>HelpFormAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpFormClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpFormClient.Designer.cs">
+      <DependentUpon>HelpFormClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpFormInfoAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpFormInfoAutor.Designer.cs">
+      <DependentUpon>HelpFormInfoAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoAutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InfoAutor.Designer.cs">
       <DependentUpon>InfoAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -95,12 +128,35 @@
     <EmbeddedResource Include="FormaEditare.resx">
       <DependentUpon>FormaEditare.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpFormAdministrator.resx">
+      <DependentUpon>HelpFormAdministrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpFormClient.resx">
+      <DependentUpon>HelpFormClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HelpFormInfoAutor.resx">
+      <DependentUpon>HelpFormInfoAutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InfoAutor.resx">
       <DependentUpon>InfoAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.client.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.Form1.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.FormaEditare.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.InfoAutor.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.MainMenu.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.Menu.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\TargMasini_Forma_toolbox.VerificareParola.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,6 +170,15 @@
     <EmbeddedResource Include="VerificareParola.resx">
       <DependentUpon>VerificareParola.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\Masini.bin" />
+    <None Include="bin\Debug\TargMasini-Forma-toolbox.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\TargMasini-Forma-toolbox.csproj.CopyComplete" />
+    <None Include="obj\Debug\TargMasini-Forma-toolbox.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\TargMasini-Forma-toolbox.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\TargMasini-Forma-toolbox.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,6 +225,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Untitlesadd - Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Renault_logo.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Renault_logo.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\FontAwesome.Sharp.dll" />
+    <Content Include="bin\Debug\Masina.dll" />
+    <Content Include="bin\Debug\Masina.pdb" />
+    <Content Include="bin\Debug\Masini.txt" />
+    <Content Include="bin\Debug\NivelAccesDate.dll" />
+    <Content Include="bin\Debug\NivelAccesDate.pdb" />
+    <Content Include="bin\Debug\parola.txt" />
+    <Content Include="bin\Debug\TargMasini-Forma-toolbox.exe" />
+    <Content Include="bin\Debug\TargMasini-Forma-toolbox.pdb" />
+    <Content Include="obj\Debug\TargMasini-Forma-toolbox.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TargMasini-Forma-toolbox.exe" />
+    <Content Include="obj\Debug\TargMasini-Forma-toolbox.pdb" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\Renault-logo-6EF3576C2E-seeklogo2.com.png" />
+    <None Include="Resources\Renault-logo-6EF3576C2E-seeklogo1.com.png" />
+    <None Include="Resources\Renault-logo-6EF3576C2E-seeklogo.com.png" />
+    <None Include="Resources\png-clipart-renault-logo-renault-symbol-car-mazda-peugeot-renault-angle-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

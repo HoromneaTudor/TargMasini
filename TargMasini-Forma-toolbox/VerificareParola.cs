@@ -12,9 +12,18 @@ using System.IO;
 
 namespace TargMasini_Forma_toolbox
 {
+    public delegate void DataSentHandler(string msg);
     public partial class VerificareParola : Form
     {
         string parola;
+        //private bool correct = false;
+        //public bool Correct
+        //{
+        //    get { return correct; }
+        //    set { correct = value; }
+        //}
+        public event DataSentHandler DataSent;
+        //public string MyVal { get; set; }
         public VerificareParola()
         {
             InitializeComponent();
@@ -29,36 +38,46 @@ namespace TargMasini_Forma_toolbox
             
         }
 
-        private void btnVerificare_Click(object sender, EventArgs e)
+        public void btnVerificare_Click(object sender, EventArgs e)
         {
             
             if (txtParola.Text == parola)
             {
-                this.Close();
-                Form1 frm1 = new Form1();
-                frm1.ReftoMenu = this.ReftoMenu;
-                this.ReftoMenu.Hide();
-
-                frm1.Show();
+                //this.Close();
+                //MyVal = "1";
+                //correct = true;
+                if(this.DataSent!=null)
+                {
+                    this.DataSent("1");
+                }
+                
+                
+                //this.Close();
+                
             }
             else
             {
                 lblTextParola.ForeColor = Color.Red;
                 lblTextParola.Text = "Parola introdusa este gresita";
+                //MyVal = "2";
+                //this.DataSent("2");
             }
         }
 
         private void btnInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
-            
-            this.ReftoMenu.Show();
+            //MyVal = "2";
+            //this.DataSent(2);
+            //this.ReftoMenu.Show();
             
         }
 
         private void VerificareParola_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.ReftoMenu.Show();
+            // this.ReftoMenu.Show();
+            //MyVal = "2";
+            //this.DataSent(2);
         }
 
         private void btnSchimbareParola_Click(object sender, EventArgs e)

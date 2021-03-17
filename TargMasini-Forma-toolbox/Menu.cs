@@ -53,5 +53,10 @@ namespace TargMasini_Forma_toolbox
             this.Hide();
             cli.Show();
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
     }
 }

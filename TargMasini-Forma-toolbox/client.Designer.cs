@@ -41,6 +41,7 @@
             // 
             // DataGridMasini
             // 
+            this.DataGridMasini.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.DataGridMasini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridMasini.Location = new System.Drawing.Point(314, 24);
             this.DataGridMasini.Name = "DataGridMasini";
@@ -49,22 +50,26 @@
             // 
             // btnInapoi
             // 
+            this.btnInapoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnInapoi.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnInapoi.Location = new System.Drawing.Point(12, 328);
             this.btnInapoi.Name = "btnInapoi";
             this.btnInapoi.Size = new System.Drawing.Size(75, 23);
             this.btnInapoi.TabIndex = 1;
             this.btnInapoi.Text = "inapoi";
-            this.btnInapoi.UseVisualStyleBackColor = true;
+            this.btnInapoi.UseVisualStyleBackColor = false;
             this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
             // 
             // btnCautare
             // 
+            this.btnCautare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCautare.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCautare.Location = new System.Drawing.Point(12, 53);
             this.btnCautare.Name = "btnCautare";
             this.btnCautare.Size = new System.Drawing.Size(75, 23);
             this.btnCautare.TabIndex = 2;
             this.btnCautare.Text = "Cautare";
-            this.btnCautare.UseVisualStyleBackColor = true;
+            this.btnCautare.UseVisualStyleBackColor = false;
             this.btnCautare.Click += new System.EventHandler(this.btnCautare_Click);
             // 
             // cmbCautare
@@ -90,6 +95,7 @@
             // lblCautare
             // 
             this.lblCautare.AutoSize = true;
+            this.lblCautare.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblCautare.Location = new System.Drawing.Point(9, 103);
             this.lblCautare.Name = "lblCautare";
             this.lblCautare.Size = new System.Drawing.Size(84, 13);
@@ -98,12 +104,14 @@
             // 
             // btnAfisareToate
             // 
+            this.btnAfisareToate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAfisareToate.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAfisareToate.Location = new System.Drawing.Point(13, 183);
             this.btnAfisareToate.Name = "btnAfisareToate";
             this.btnAfisareToate.Size = new System.Drawing.Size(75, 23);
             this.btnAfisareToate.TabIndex = 6;
             this.btnAfisareToate.Text = "Afisare toate";
-            this.btnAfisareToate.UseVisualStyleBackColor = true;
+            this.btnAfisareToate.UseVisualStyleBackColor = false;
             this.btnAfisareToate.Click += new System.EventHandler(this.btnAfisareToate_Click);
             // 
             // lblEroare
@@ -118,7 +126,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.ClientSize = new System.Drawing.Size(1143, 401);
             this.Controls.Add(this.lblEroare);
             this.Controls.Add(this.btnAfisareToate);
             this.Controls.Add(this.lblCautare);

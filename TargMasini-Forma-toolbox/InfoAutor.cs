@@ -27,12 +27,12 @@ namespace TargMasini_Forma_toolbox
         private void btnInapoi_Click(object sender, EventArgs e)
         {
             this.Close();
-            this.ReftoMenu.Show();
+            //this.ReftoMenu.Show();
         }
 
         private void InfoAutor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.ReftoMenu.Show();
+           // this.ReftoMenu.Show();
         }
     }
 }

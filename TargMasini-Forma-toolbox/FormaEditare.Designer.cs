@@ -56,6 +56,9 @@ namespace TargMasini_Forma_toolbox
             this.lblPrenume = new System.Windows.Forms.Label();
             this.lblNume = new System.Windows.Forms.Label();
             this.lblTip = new System.Windows.Forms.Label();
+            this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.btnMaximize = new FontAwesome.Sharp.IconButton();
+            this.btnMinimize = new FontAwesome.Sharp.IconButton();
             this.gpbOptiuni.SuspendLayout();
             this.gpbCuloar.SuspendLayout();
             this.SuspendLayout();
@@ -335,6 +338,64 @@ namespace TargMasini_Forma_toolbox
             this.lblTip.TabIndex = 60;
             this.lblTip.Text = "Tip";
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnClose.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnClose.IconColor = System.Drawing.Color.Black;
+            this.btnClose.IconSize = 25;
+            this.btnClose.Location = new System.Drawing.Point(762, 10);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Rotation = 0D;
+            this.btnClose.Size = new System.Drawing.Size(25, 25);
+            this.btnClose.TabIndex = 63;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            this.btnClose.MouseHover += new System.EventHandler(this.btnClose_MouseHover);
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaximize.FlatAppearance.BorderSize = 0;
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
+            this.btnMaximize.IconColor = System.Drawing.Color.Black;
+            this.btnMaximize.IconSize = 16;
+            this.btnMaximize.Location = new System.Drawing.Point(731, 10);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Rotation = 0D;
+            this.btnMaximize.Size = new System.Drawing.Size(25, 25);
+            this.btnMaximize.TabIndex = 62;
+            this.btnMaximize.UseVisualStyleBackColor = false;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
+            this.btnMinimize.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize.IconSize = 16;
+            this.btnMinimize.Location = new System.Drawing.Point(700, 10);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Rotation = 0D;
+            this.btnMinimize.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimize.TabIndex = 61;
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.btnMinimize.MouseLeave += new System.EventHandler(this.btnMinimize_MouseLeave);
+            this.btnMinimize.MouseHover += new System.EventHandler(this.btnMinimize_MouseHover);
+            // 
             // FormaEditare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +403,9 @@ namespace TargMasini_Forma_toolbox
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::TargMasini_Forma_toolbox.Properties.Resources.saasdas;
             this.ClientSize = new System.Drawing.Size(800, 516);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnMaximize);
+            this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.lblTip);
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.txtAn);
@@ -363,6 +427,7 @@ namespace TargMasini_Forma_toolbox
             this.Text = "FormaEditare";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormaEditare_FormClosing);
             this.Load += new System.EventHandler(this.FormaEditare_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormaEditare_MouseDown);
             this.gpbOptiuni.ResumeLayout(false);
             this.gpbOptiuni.PerformLayout();
             this.gpbCuloar.ResumeLayout(false);
@@ -400,5 +465,8 @@ namespace TargMasini_Forma_toolbox
         private System.Windows.Forms.Label lblPrenume;
         private System.Windows.Forms.Label lblNume;
         private System.Windows.Forms.Label lblTip;
+        private FontAwesome.Sharp.IconButton btnClose;
+        private FontAwesome.Sharp.IconButton btnMaximize;
+        private FontAwesome.Sharp.IconButton btnMinimize;
     }
 }

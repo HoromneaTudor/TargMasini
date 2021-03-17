@@ -83,9 +83,69 @@ namespace TargMasini_Forma_toolbox.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_clipart_renault_logo_renault_symbol_car_mazda_peugeot_renault_angle_text {
+            get {
+                object obj = ResourceManager.GetObject("png-clipart-renault-logo-renault-symbol-car-mazda-peugeot-renault-angle-text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Renault_logo_6EF3576C2E_seeklogo_com {
+            get {
+                object obj = ResourceManager.GetObject("Renault-logo-6EF3576C2E-seeklogo.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Renault_logo_6EF3576C2E_seeklogo1_com {
+            get {
+                object obj = ResourceManager.GetObject("Renault-logo-6EF3576C2E-seeklogo1.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Renault_logo_6EF3576C2E_seeklogo2_com {
+            get {
+                object obj = ResourceManager.GetObject("Renault-logo-6EF3576C2E-seeklogo2.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Renault_logo_design_Passion_for_life {
             get {
                 object obj = ResourceManager.GetObject("Renault-logo-design-Passion-for-life", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Renault_logo_svg {
+            get {
+                object obj = ResourceManager.GetObject("Renault_logo.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Renault_logo_svg1 {
+            get {
+                object obj = ResourceManager.GetObject("Renault_logo.svg1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
